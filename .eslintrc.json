@@ -63,6 +63,7 @@
         ],
         "@typescript-eslint/comma-dangle": "off",
         "import/prefer-default-export": "off",
+        "import/extensions": "off",
         "class-methods-use-this": "off",
         "@typescript-eslint/no-unused-vars": "off",
         "unused-imports/no-unused-imports": "error",

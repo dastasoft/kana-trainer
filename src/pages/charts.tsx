@@ -1,11 +1,11 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
+import { NextPage } from 'next'
 
+import HiraganaList from '@/components/HiraganaList'
 // @ts-ignore
 import hiraganaData from '@/public/hiragana'
 
-import HiraganaList from './HiraganaList'
-
-export default function Charts() {
+const Charts: NextPage = () => {
   return (
     <Tabs>
       <TabList>
@@ -20,3 +20,5 @@ export default function Charts() {
     </Tabs>
   )
 }
+
+export default Charts

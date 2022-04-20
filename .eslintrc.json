@@ -11,7 +11,8 @@
       {
         "endOfLine": "auto",
         "semi": false,
-        "singleQuote": true
+        "singleQuote": true,
+        "arrowParens": "always"
       }
     ]
   },
@@ -34,7 +35,8 @@
           {
             "endOfLine": "auto",
             "semi": false,
-            "singleQuote": true
+            "singleQuote": true,
+            "arrowParens": "always"
           }
         ],
         "react/destructuring-assignment": "off",

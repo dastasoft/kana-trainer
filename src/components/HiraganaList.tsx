@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from 'react'
 
 import { Box, Flex, FormLabel, Grid, GridItem, Switch } from '@chakra-ui/react'
 
-import Kana from '@/components/Kana'
+import KanaCard from '@/components/KanaCard'
 
 export default function HiraganaList({ hiraganaList = { basic: [] } }) {
   const [displayRomaji, setDisplayRomaji] = useState(false)
@@ -19,16 +19,21 @@ export default function HiraganaList({ hiraganaList = { basic: [] } }) {
           }
         />
       </Flex>
-      <Grid templateColumns="repeat(5, 1fr)" gap={2} mt={6}>
+      <Grid templateColumns="repeat(5, 1fr)" mt={6} gap={2}>
+        {['a', 'i', 'u', 'e', 'o'].map((letter) => (
+          <GridItem key={letter}>
+            <Flex justifyContent="center">{letter}</Flex>
+          </GridItem>
+        ))}
         {hiraganaList.basic.map(({ romaji }) => (
           <GridItem
             key={romaji}
-            bg="tomato"
-            px="2"
-            py="1"
-            border="2px solid blueviolet"
+            border="2px solid"
+            borderColor="red.400"
+            borderTopRadius={5}
+            borderBottomRadius={5}
           >
-            <Kana romaji={romaji} displayRomaji={displayRomaji} />
+            <KanaCard romaji={romaji} displayRomaji={displayRomaji} />
           </GridItem>
         ))}
       </Grid>

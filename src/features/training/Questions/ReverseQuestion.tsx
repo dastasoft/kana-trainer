@@ -6,21 +6,18 @@ import _without from 'lodash/without'
 
 import { Kana } from '@/features/shared/types'
 import ResponseSelector from '@/features/training/ResponseSelector'
-// @ts-ignore
-import hiraganaData from '@/public/hiragana'
 
 type Props = {
+  kanaList: Kana[]
   currentKana: Kana
   handleResponse: (isCorrect: boolean) => void
 }
 
-const ReverseQuestion = ({ currentKana, handleResponse }: Props) => {
+const ReverseQuestion = ({ kanaList, currentKana, handleResponse }: Props) => {
   const options = useMemo(
     () =>
-      _sampleSize(_without(hiraganaData.basic, currentKana), 3).map(
-        ({ kana }) => kana
-      ),
-    [currentKana]
+      _sampleSize(_without(kanaList, currentKana), 3).map(({ kana }) => kana),
+    [currentKana, kanaList]
   )
 
   return (

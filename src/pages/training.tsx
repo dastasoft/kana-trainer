@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import { Box, Button, VStack } from '@chakra-ui/react'
 import _sample from 'lodash/sample'
 import _without from 'lodash/without'
 import { NextPage } from 'next'
 
+import { KanaContext } from '@/features/shared/kana-context'
+import { Kana } from '@/features/shared/types'
 import Questions, { QuestionModes } from '@/features/training/Questions'
-// @ts-ignore
-import hiraganaData from '@/public/hiragana'
 
 const UIStates = {
   SELECT_MODE: 0,
@@ -19,18 +19,24 @@ const Training: NextPage = () => {
   const [training, setTraining] = useState<number>(
     QuestionModes.KANA_RECOGNITION
   )
-  const [remainingKana, setRemainingKana] = useState(hiraganaData.basic)
-  const [currentKana, setCurrentKana] = useState(null)
+  const [remainingKana, setRemainingKana] = useState([] as Kana[])
+  const [currentKana, setCurrentKana] = useState<Kana | null>(null)
   const [correctResponses, setCorrectResponses] = useState(0)
   const [UIState, setUIState] = useState<number>(UIStates.SELECT_MODE)
+
+  const { hiragana: hiraganaData } = useContext(KanaContext)
+
+  useEffect(() => {
+    setRemainingKana(hiraganaData.basic)
+  }, [hiraganaData.basic])
 
   const displayNext = () => {
     if (remainingKana.length <= 0) {
       setUIState(UIStates.END)
     } else {
       const nextKana = _sample(remainingKana)
-      setRemainingKana(_without(remainingKana, nextKana))
-      setCurrentKana(nextKana)
+      setRemainingKana(_without(remainingKana, nextKana) as Kana[])
+      setCurrentKana(nextKana as Kana)
     }
   }
 
@@ -71,6 +77,7 @@ const Training: NextPage = () => {
       <Box>
         {currentKana && (
           <Questions
+            kanaList={hiraganaData.basic}
             currentKana={currentKana}
             handleResponse={handleResponse}
             trainingMode={training}

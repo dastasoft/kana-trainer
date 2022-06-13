@@ -6,21 +6,20 @@ import _without from 'lodash/without'
 import Kana from '@/features/shared/Kana'
 import { Kana as TKana } from '@/features/shared/types'
 import ResponseSelector from '@/features/training/ResponseSelector'
-// @ts-ignore
-import hiraganaData from '@/public/hiragana'
 
 type Props = {
+  kanaList: TKana[]
   currentKana: TKana
   handleResponse: (isCorrect: boolean) => void
 }
 
-const KanaQuestion = ({ currentKana, handleResponse }: Props) => {
+const KanaQuestion = ({ kanaList, currentKana, handleResponse }: Props) => {
   const options = useMemo(
     () =>
-      _sampleSize(_without(hiraganaData.basic, currentKana), 3).map(
+      _sampleSize(_without(kanaList, currentKana), 3).map(
         ({ romaji }) => romaji
       ),
-    [currentKana]
+    [currentKana, kanaList]
   )
 
   return (

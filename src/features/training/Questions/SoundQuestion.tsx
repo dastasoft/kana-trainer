@@ -8,22 +8,19 @@ import { FaSoundcloud } from 'react-icons/fa'
 import { Kana } from '@/features/shared/types'
 import ResponseSelector from '@/features/training/ResponseSelector'
 import useAudio from '@/hooks/useAudio'
-// @ts-ignore
-import hiraganaData from '@/public/hiragana'
 
 type Props = {
+  kanaList: Kana[]
   currentKana: Kana
   handleResponse: (isCorrect: boolean) => void
 }
 
-const SoundQuestion = ({ currentKana, handleResponse }: Props) => {
+const SoundQuestion = ({ kanaList, currentKana, handleResponse }: Props) => {
   const [play] = useAudio(currentKana.romaji)
   const options = useMemo(
     () =>
-      _sampleSize(_without(hiraganaData.basic, currentKana), 3).map(
-        ({ kana }) => kana
-      ),
-    [currentKana]
+      _sampleSize(_without(kanaList, currentKana), 3).map(({ kana }) => kana),
+    [currentKana, kanaList]
   )
 
   useEffect(() => {

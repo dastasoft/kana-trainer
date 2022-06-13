@@ -13,12 +13,14 @@ export const QuestionModes = {
 } as const
 
 type Props = {
+  kanaList: Kana[]
   currentKana: Kana
   handleResponse: (isCorrect: boolean) => void
   trainingMode: number
 }
 
 export default function Questions({
+  kanaList,
   currentKana,
   handleResponse,
   trainingMode = QuestionModes.KANA_RECOGNITION,
@@ -27,6 +29,7 @@ export default function Questions({
     if (trainingMode === QuestionModes.KANA_RECOGNITION)
       return (
         <KanaQuestion
+          kanaList={kanaList}
           currentKana={currentKana}
           handleResponse={handleResponse}
         />
@@ -35,6 +38,7 @@ export default function Questions({
     if (trainingMode === QuestionModes.REVERSE_RECOGNITION)
       return (
         <ReverseQuestion
+          kanaList={kanaList}
           currentKana={currentKana}
           handleResponse={handleResponse}
         />
@@ -43,6 +47,7 @@ export default function Questions({
     if (trainingMode === QuestionModes.SOUND_RECOGNITION)
       return (
         <SoundQuestion
+          kanaList={kanaList}
           currentKana={currentKana}
           handleResponse={handleResponse}
         />

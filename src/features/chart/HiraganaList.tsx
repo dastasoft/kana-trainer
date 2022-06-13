@@ -1,11 +1,15 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useContext, useState } from 'react'
 
 import { Box, Flex, FormLabel, Grid, GridItem, Switch } from '@chakra-ui/react'
 
 import KanaCard from '@/features/chart/KanaCard'
 
-export default function HiraganaList({ hiraganaList = { basic: [] } }) {
+import { KanaContext } from '../shared/kana-context'
+
+export default function HiraganaList() {
   const [displayRomaji, setDisplayRomaji] = useState(false)
+
+  const { hiragana: hiraganaData } = useContext(KanaContext)
 
   return (
     <Box>
@@ -25,7 +29,7 @@ export default function HiraganaList({ hiraganaList = { basic: [] } }) {
             <Flex justifyContent="center">{letter}</Flex>
           </GridItem>
         ))}
-        {hiraganaList.basic.map(({ romaji }) => (
+        {hiraganaData.basic.map(({ romaji }) => (
           <GridItem
             key={romaji}
             border="2px solid"

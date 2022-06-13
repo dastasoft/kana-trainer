@@ -6,7 +6,7 @@ import { FaSoundcloud } from 'react-icons/fa'
 
 import useAudio from '@/hooks/useAudio'
 
-import Kana from './Kana'
+import Kana from '../shared/Kana'
 
 type Props = {
   romaji: string

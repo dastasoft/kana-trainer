@@ -1,30 +1,44 @@
 import { useMemo, useState } from 'react'
 
-import { Grid, GridItem, Text } from '@chakra-ui/react'
+import { Box, Grid, GridItem, Text } from '@chakra-ui/react'
+import _shuffle from 'lodash/shuffle'
 
-const Response = ({ response, isCorrect }) => {
+const Response = ({
+  response,
+  isCorrect,
+}: {
+  response: string
+  isCorrect: boolean
+}) => {
   return <Text bgColor={isCorrect ? 'green' : 'tomato'}>{response}</Text>
+}
+
+const NEXT_QUESTION_TIME = 1000
+
+type Props = {
+  correctOption: string
+  options: string[]
+  handleResponse: (isCorrect: boolean) => void
 }
 
 export default function ResponseSelector({
   correctOption = '',
   options = [],
-  nextAction,
-}) {
+  handleResponse,
+}: Props) {
   const [revealResponses, setRevealResponses] = useState(false)
   const allOptions = useMemo(
-    () => [correctOption, ...options].sort(() => Math.random() - 0.5),
+    () => _shuffle([correctOption, ...options]),
     [correctOption, options]
   )
 
-  const responseHandler = (e) => {
-    console.log(e.target)
+  const responseHandler = (isCorrect: boolean) => {
     setRevealResponses(true)
-    if (nextAction) {
+    if (handleResponse) {
       setTimeout(() => {
         setRevealResponses(false)
-        nextAction()
-      }, 3000)
+        handleResponse(isCorrect)
+      }, NEXT_QUESTION_TIME)
     }
   }
 
@@ -37,12 +51,13 @@ export default function ResponseSelector({
           fontWeight="bold"
           textTransform="uppercase"
           textAlign="center"
-          onClick={responseHandler}
         >
           {revealResponses ? (
             <Response response={option} isCorrect={option === correctOption} />
           ) : (
-            option
+            <Box onClick={() => responseHandler(option === correctOption)}>
+              {option}
+            </Box>
           )}
         </GridItem>
       ))}

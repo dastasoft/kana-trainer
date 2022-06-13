@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from 'react'
 
 import { Box, Flex, FormLabel, Grid, GridItem, Switch } from '@chakra-ui/react'
 
-import KanaCard from '@/components/KanaCard'
+import KanaCard from '@/features/chart/KanaCard'
 
 export default function HiraganaList({ hiraganaList = { basic: [] } }) {
   const [displayRomaji, setDisplayRomaji] = useState(false)

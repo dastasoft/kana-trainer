@@ -1,7 +1,7 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import { NextPage } from 'next'
 
-import HiraganaList from '@/components/HiraganaList'
+import HiraganaList from '@/features/chart/HiraganaList'
 // @ts-ignore
 import hiraganaData from '@/public/hiragana'
 

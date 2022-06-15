@@ -24,7 +24,7 @@ const KanaQuestion = ({ kanaList, currentKana, handleResponse }: Props) => {
 
   return (
     <>
-      <Kana romaji={currentKana.romaji} />
+      <Kana kana={currentKana.kana} />
       <ResponseSelector
         correctOption={currentKana.romaji}
         options={options}

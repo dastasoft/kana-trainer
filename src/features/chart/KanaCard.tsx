@@ -9,11 +9,12 @@ import useAudio from '@/hooks/useAudio'
 import Kana from '../shared/Kana'
 
 type Props = {
+  kana: string
   romaji: string
   displayRomaji: boolean
 }
 
-const KanaCard = ({ romaji, displayRomaji }: Props) => {
+const KanaCard = ({ kana, romaji, displayRomaji }: Props) => {
   const [strokeOrderVisible, setStrokeOrderVisible] = useState(false)
   const [play] = useAudio(romaji)
 
@@ -33,15 +34,15 @@ const KanaCard = ({ romaji, displayRomaji }: Props) => {
           {strokeOrderVisible ? (
             <Box>
               <Image
-                src={`/images/animated/${romaji}.gif`}
+                src={`/images/animated/${kana}.gif`}
                 height="100%"
                 width="100%"
-                alt={romaji}
+                alt={kana}
               />
             </Box>
           ) : (
             <Box>
-              <Kana romaji={romaji} />
+              <Kana kana={kana} />
             </Box>
           )}
         </Box>

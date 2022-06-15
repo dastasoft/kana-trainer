@@ -1,6 +1,11 @@
-import { useContext, useEffect, useState } from 'react'
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable no-underscore-dangle */
+import { useContext, useState } from 'react'
 
-import { Box, Button, VStack } from '@chakra-ui/react'
+import { Box, Button, Radio, RadioGroup, Stack, VStack } from '@chakra-ui/react'
+import _capitalize from 'lodash/capitalize'
+import _find from 'lodash/find'
+import _map from 'lodash/map'
 import _sample from 'lodash/sample'
 import _without from 'lodash/without'
 import { NextPage } from 'next'
@@ -15,7 +20,20 @@ const UIStates = {
   END: 2,
 } as const
 
+interface ITrainingPaths {
+  HIRAGANA: 'hiragana'
+  KATAKANA: 'katakana'
+}
+
+const TrainingPaths: ITrainingPaths = {
+  HIRAGANA: 'hiragana',
+  KATAKANA: 'katakana',
+} as const
+
 const Training: NextPage = () => {
+  const [trainingPath, setTrainingPath] = useState<'hiragana' | 'katakana'>(
+    TrainingPaths.HIRAGANA
+  )
   const [training, setTraining] = useState<number>(
     QuestionModes.KANA_RECOGNITION
   )
@@ -24,51 +42,64 @@ const Training: NextPage = () => {
   const [correctResponses, setCorrectResponses] = useState(0)
   const [UIState, setUIState] = useState<number>(UIStates.SELECT_MODE)
 
-  const { hiragana: hiraganaData } = useContext(KanaContext)
+  const kanaData = useContext(KanaContext)
 
-  useEffect(() => {
-    setRemainingKana(hiraganaData.basic)
-  }, [hiraganaData.basic])
-
-  const displayNext = () => {
-    if (remainingKana.length <= 0) {
+  const displayNext = (_remainingKana: Kana[]) => {
+    if (_remainingKana.length <= 0) {
       setUIState(UIStates.END)
     } else {
-      const nextKana = _sample(remainingKana)
-      setRemainingKana(_without(remainingKana, nextKana) as Kana[])
+      const nextKana = _sample(_remainingKana)
+      setRemainingKana(_without(_remainingKana, nextKana) as Kana[])
       setCurrentKana(nextKana as Kana)
     }
   }
 
   const handleResponse = (isCorrect: boolean) => {
     if (isCorrect) setCorrectResponses(correctResponses + 1)
-    displayNext()
+    displayNext(remainingKana)
   }
 
   const start = (trainingMode: number) => {
+    const _remainingKana = kanaData[trainingPath].basic
+    setRemainingKana(_remainingKana)
     setTraining(trainingMode)
     setUIState(UIStates.TRAINING)
-    displayNext()
+    displayNext(_remainingKana)
   }
 
   const startAgain = () => {
-    setRemainingKana(hiraganaData.basic)
     setUIState(UIStates.SELECT_MODE)
   }
 
   if (UIState === UIStates.SELECT_MODE) {
     return (
-      <VStack mt="4">
-        <Button onClick={() => start(QuestionModes.KANA_RECOGNITION)}>
-          Kana Recognition
-        </Button>
-        <Button onClick={() => start(QuestionModes.REVERSE_RECOGNITION)}>
-          Reverse Recognition
-        </Button>
-        <Button onClick={() => start(QuestionModes.SOUND_RECOGNITION)}>
-          Sound Recognition
-        </Button>
-      </VStack>
+      <Box>
+        <RadioGroup
+          onChange={(nextValue: 'hiragana' | 'katakana') =>
+            setTrainingPath(_find(TrainingPaths, (v) => v === nextValue)!)
+          }
+          value={trainingPath}
+        >
+          <Stack direction="row">
+            {_map(TrainingPaths, (value) => (
+              <Radio key={value} value={value}>
+                {_capitalize(value)}
+              </Radio>
+            ))}
+          </Stack>
+        </RadioGroup>
+        <VStack mt="4">
+          <Button onClick={() => start(QuestionModes.KANA_RECOGNITION)}>
+            Kana Recognition
+          </Button>
+          <Button onClick={() => start(QuestionModes.REVERSE_RECOGNITION)}>
+            Reverse Recognition
+          </Button>
+          <Button onClick={() => start(QuestionModes.SOUND_RECOGNITION)}>
+            Sound Recognition
+          </Button>
+        </VStack>
+      </Box>
     )
   }
 
@@ -77,7 +108,7 @@ const Training: NextPage = () => {
       <Box>
         {currentKana && (
           <Questions
-            kanaList={hiraganaData.basic}
+            kanaList={kanaData[trainingPath].basic}
             currentKana={currentKana}
             handleResponse={handleResponse}
             trainingMode={training}
@@ -89,7 +120,7 @@ const Training: NextPage = () => {
 
   return (
     <Box>
-      {correctResponses} of {hiraganaData.basic.length}
+      {correctResponses} of {kanaData[trainingPath].basic.length}
       <Button onClick={startAgain}>Start again</Button>
     </Box>
   )

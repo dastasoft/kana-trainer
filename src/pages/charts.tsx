@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import { NextPage } from 'next'
 
-import KanaList from '@/features/chart/KanaList'
+import KanaList from '@/features/chart/KanaList/'
 import { KanaContext } from '@/features/shared/kana-context'
 
 const Charts: NextPage = () => {

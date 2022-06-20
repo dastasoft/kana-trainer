@@ -15,7 +15,6 @@ const Links = [
   { name: 'Home', href: '/' },
   { name: 'Charts', href: '/charts' },
   { name: 'Training', href: '/training' },
-  { name: 'Games', href: '/games' },
   { name: 'Resources', href: '/resources' },
 ]
 

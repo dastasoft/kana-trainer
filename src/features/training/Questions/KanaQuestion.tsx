@@ -11,9 +11,15 @@ type Props = {
   kanaList: TKana[]
   currentKana: TKana
   handleResponse: (isCorrect: boolean) => void
+  alphabet: 'hiragana' | 'katakana'
 }
 
-const KanaQuestion = ({ kanaList, currentKana, handleResponse }: Props) => {
+const KanaQuestion = ({
+  kanaList,
+  currentKana,
+  handleResponse,
+  alphabet,
+}: Props) => {
   const options = useMemo(
     () =>
       _sampleSize(_without(kanaList, currentKana), 3).map(
@@ -24,7 +30,7 @@ const KanaQuestion = ({ kanaList, currentKana, handleResponse }: Props) => {
 
   return (
     <>
-      <Kana kana={currentKana.kana} />
+      <Kana kana={currentKana.kana} alphabet={alphabet} />
       <ResponseSelector
         correctOption={currentKana.romaji}
         options={options}

@@ -12,9 +12,10 @@ type Props = {
   kana: string
   romaji: string
   displayRomaji: boolean
+  alphabet: 'hiragana' | 'katakana'
 }
 
-const KanaCard = ({ kana, romaji, displayRomaji }: Props) => {
+const KanaCard = ({ kana, romaji, displayRomaji, alphabet }: Props) => {
   const [strokeOrderVisible, setStrokeOrderVisible] = useState(false)
   const [play] = useAudio(romaji)
 
@@ -34,7 +35,7 @@ const KanaCard = ({ kana, romaji, displayRomaji }: Props) => {
           {strokeOrderVisible ? (
             <Box>
               <Image
-                src={`/images/animated/${kana}.gif`}
+                src={`/images/animated/${alphabet}/${kana}.gif`}
                 height="100%"
                 width="100%"
                 alt={kana}
@@ -42,7 +43,7 @@ const KanaCard = ({ kana, romaji, displayRomaji }: Props) => {
             </Box>
           ) : (
             <Box>
-              <Kana kana={kana} />
+              <Kana kana={kana} alphabet={alphabet} />
             </Box>
           )}
         </Box>

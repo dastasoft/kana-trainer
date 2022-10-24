@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="500"
+   height="500"
+   viewBox="0 0 132.29166 132.29167"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="Japanese_Hiragana_kyokashotai_YO.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-64.285714"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="837"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-164.70832)">
+    <g
+       aria-label="よ"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:141.11109924px;line-height:1.25;font-family:MHGKyokashotaiTHK;-inkscape-font-specification:MHGKyokashotaiTHK;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       id="text817"
+       transform="translate(-61.378293,51.25249)">
+      <path
+         d="m 164.42468,228.78285 c 0,-2.11667 -1.27,-3.95111 -3.81,-5.50334 -5.22111,-3.24555 -14.53445,-7.90222 -28.08111,-13.68777 0,-19.89667 0.14111,-36.26555 0.56444,-49.10666 1.41111,0.70555 2.82223,1.12888 4.37445,1.12888 9.17222,-1.12888 17.63888,-2.96333 25.25888,-5.50333 1.55223,-0.84666 1.55223,-1.69333 0,-2.82222 -2.54,-1.41111 -4.93888,-2.25778 -7.05555,-2.25778 -1.12889,0.42334 -2.25778,0.98778 -3.38667,1.69334 -3.95111,1.83444 -7.62,3.10444 -11.00666,3.95111 -3.24556,0.70555 -6.06778,0.98777 -8.18445,0.98777 v -14.25222 c 0,-4.09222 0.28223,-6.63222 0.98778,-7.76111 0.84667,-2.25778 -2.11667,-5.36222 -8.74889,-9.31333 -1.83444,-0.70556 -2.39889,-0.56444 -1.69333,0.56444 1.55222,2.82223 2.39889,7.62 2.82222,14.25223 0.28222,6.63222 0.56445,28.64555 0.56445,66.1811 -6.63223,-2.54 -11.85334,-4.51555 -15.52223,-5.50333 -3.95111,-1.12889 -7.61999,-1.69334 -11.00666,-1.69334 -2.963334,0 -5.503334,1.12889 -7.761111,3.38667 -1.411111,1.41111 -2.116667,4.23333 -2.116667,8.18444 0,4.37445 1.27,7.90223 3.81,10.44223 2.963333,2.96333 7.196668,4.51555 12.699998,4.51555 3.66889,0 7.47889,-0.84667 11.57111,-2.25778 5.08,-1.83444 9.03111,-4.79777 11.57111,-8.74888 10.30111,5.08 18.76778,9.87777 25.4,14.25222 3.24555,2.25777 5.50333,3.38666 6.63222,3.38666 1.41111,0 2.11667,-1.55222 2.11667,-4.51555 z M 125.3369,212.83729 c -2.25777,3.66889 -5.92666,6.49111 -11.00666,8.32556 -2.96334,1.12889 -6.06778,1.55222 -9.45445,1.55222 -3.66889,0 -6.632218,-0.98778 -8.748885,-3.24555 -1.834444,-1.83445 -2.822222,-4.65667 -2.822222,-8.32556 0,-1.83444 0.705556,-3.38667 2.257778,-4.93889 1.128889,-1.12889 2.963333,-1.69333 5.503329,-1.69333 2.54,0 6.06778,0.70555 10.44222,2.25778 5.22112,1.83444 9.73667,3.81 13.82889,6.06777 z"
+         style="stroke-width:0.26458332"
+         id="path819"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

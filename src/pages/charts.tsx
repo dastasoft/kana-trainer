@@ -41,10 +41,18 @@ const Charts: NextPage = () => {
 
       <TabPanels>
         <TabPanel>
-          <KanaList kanaData={hiraganaData} displayRomaji={displayRomaji} />
+          <KanaList
+            kanaData={hiraganaData}
+            displayRomaji={displayRomaji}
+            alphabet="hiragana"
+          />
         </TabPanel>
         <TabPanel>
-          <KanaList kanaData={katakanaData} displayRomaji={displayRomaji} />
+          <KanaList
+            kanaData={katakanaData}
+            displayRomaji={displayRomaji}
+            alphabet="katakana"
+          />
         </TabPanel>
       </TabPanels>
     </Tabs>

@@ -119,12 +119,14 @@ const fillers = {
 
 const extraItems: Filler = { ...gridYIndexes, ...fillers }
 
-export default function HiraganaList({
+export default function KanaList({
   kanaData,
   displayRomaji,
+  alphabet,
 }: {
   kanaData: KanaData
   displayRomaji: boolean
+  alphabet: 'hiragana' | 'katakana'
 }) {
   const basicKana = kanaData.basic.map(({ kana, romaji }) => {
     const Item = () => (
@@ -135,7 +137,12 @@ export default function HiraganaList({
         borderTopRadius={5}
         borderBottomRadius={5}
       >
-        <KanaCard kana={kana} romaji={romaji} displayRomaji={displayRomaji} />
+        <KanaCard
+          kana={kana}
+          romaji={romaji}
+          displayRomaji={displayRomaji}
+          alphabet={alphabet}
+        />
       </GridItem>
     )
 

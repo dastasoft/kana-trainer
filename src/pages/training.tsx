@@ -108,6 +108,7 @@ const Training: NextPage = () => {
       <Box>
         {currentKana && (
           <Questions
+            alphabet={trainingPath}
             kanaList={kanaData[trainingPath].basic}
             currentKana={currentKana}
             handleResponse={handleResponse}

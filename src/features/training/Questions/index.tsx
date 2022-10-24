@@ -17,6 +17,7 @@ type Props = {
   currentKana: Kana
   handleResponse: (isCorrect: boolean) => void
   trainingMode: number
+  alphabet: 'hiragana' | 'katakana'
 }
 
 export default function Questions({
@@ -24,11 +25,13 @@ export default function Questions({
   currentKana,
   handleResponse,
   trainingMode = QuestionModes.KANA_RECOGNITION,
+  alphabet,
 }: Props) {
   const Question = () => {
     if (trainingMode === QuestionModes.KANA_RECOGNITION)
       return (
         <KanaQuestion
+          alphabet={alphabet}
           kanaList={kanaList}
           currentKana={currentKana}
           handleResponse={handleResponse}

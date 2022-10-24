@@ -128,17 +128,15 @@ export default function HiraganaList({
 }) {
   const basicKana = kanaData.basic.map(({ kana, romaji }) => {
     const Item = () => (
-      <>
-        <GridItem
-          key={romaji}
-          border="2px solid"
-          borderColor="red.400"
-          borderTopRadius={5}
-          borderBottomRadius={5}
-        >
-          <KanaCard kana={kana} romaji={romaji} displayRomaji={displayRomaji} />
-        </GridItem>
-      </>
+      <GridItem
+        key={romaji}
+        border="2px solid"
+        borderColor="red.400"
+        borderTopRadius={5}
+        borderBottomRadius={5}
+      >
+        <KanaCard kana={kana} romaji={romaji} displayRomaji={displayRomaji} />
+      </GridItem>
     )
 
     return extraItems[romaji] ? extraItems[romaji]!(<Item />) : <Item />

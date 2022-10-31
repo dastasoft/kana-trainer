@@ -45,6 +45,7 @@ export default function KanaList({
           alphabet={alphabet}
           displayRomaji={displayRomaji}
           collection={kanaData.intermediate}
+          disableAnimations
         />
       </Grid>
 
@@ -62,6 +63,7 @@ export default function KanaList({
           alphabet={alphabet}
           displayRomaji={displayRomaji}
           collection={kanaData.advanced}
+          disableAnimations
         />
       </Grid>
     </Box>

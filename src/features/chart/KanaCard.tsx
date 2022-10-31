@@ -8,19 +8,28 @@ import useAudio from '@/hooks/useAudio'
 
 import Kana from '../shared/Kana'
 
-type Props = {
+type KanaCardProps = {
   kana: string
   romaji: string
   displayRomaji: boolean
   alphabet: 'hiragana' | 'katakana'
+  disableAnimations: boolean
 }
 
-const KanaCard = ({ kana, romaji, displayRomaji, alphabet }: Props) => {
+const KanaCard = ({
+  kana,
+  romaji,
+  displayRomaji,
+  alphabet,
+  disableAnimations,
+}: KanaCardProps) => {
   const [strokeOrderVisible, setStrokeOrderVisible] = useState(false)
   const [play] = useAudio(romaji)
 
-  const toggleHandler = () =>
+  const toggleHandler = () => {
+    if (disableAnimations) return
     setStrokeOrderVisible((prevState: boolean) => !prevState)
+  }
 
   return (
     <Flex flexDirection="column" alignItems="center">

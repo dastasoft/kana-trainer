@@ -1,6 +1,6 @@
-import { Box, Grid, Heading } from '@chakra-ui/react'
+import { Box, Grid, Heading, Text } from '@chakra-ui/react'
 
-import { KanaData } from '../../shared/types'
+import { KanaData, KanaType } from '../../shared/types'
 import IndexLetter from './IndexLetter'
 import KanaToGridItem from './KanaToGridItem'
 
@@ -11,17 +11,15 @@ export default function KanaList({
 }: {
   kanaData: KanaData
   displayRomaji: boolean
-  alphabet: 'hiragana' | 'katakana'
+  alphabet: KanaType
 }) {
   return (
     <Box>
-      <Heading>Seion</Heading>
-      <Grid
-        templateColumns="20px repeat(5, 1fr)"
-        mt={6}
-        gap={2}
-        alignItems="center"
-      >
+      <Heading>Basic</Heading>
+      <Text py="2">
+        *Click on each Kana to display the stroke order animation.
+      </Text>
+      <Grid templateColumns="20px repeat(5, 1fr)" gap={2} alignItems="center">
         {['', 'a', 'i', 'u', 'e', 'o'].map((letter) => (
           <IndexLetter key={letter} letter={letter} />
         ))}
@@ -31,13 +29,8 @@ export default function KanaList({
           collection={kanaData.basic}
         />
       </Grid>
-      <Heading>Dakuon - Handakuon</Heading>
-      <Grid
-        templateColumns="20px repeat(5, 1fr)"
-        mt={6}
-        gap={2}
-        alignItems="center"
-      >
+      <Heading mt="10">Voiced</Heading>
+      <Grid templateColumns="20px repeat(5, 1fr)" gap={2} alignItems="center">
         {['', 'a', 'i', 'u', 'e', 'o'].map((letter) => (
           <IndexLetter key={letter} letter={letter} />
         ))}
@@ -49,13 +42,8 @@ export default function KanaList({
         />
       </Grid>
 
-      <Heading>Youon</Heading>
-      <Grid
-        templateColumns="20px repeat(3, 1fr)"
-        mt={6}
-        gap={2}
-        alignItems="center"
-      >
+      <Heading mt="10">Y-vowel</Heading>
+      <Grid templateColumns="20px repeat(3, 1fr)" gap={2} alignItems="center">
         {['', 'a', 'u', 'o'].map((letter) => (
           <IndexLetter key={letter} letter={letter} />
         ))}

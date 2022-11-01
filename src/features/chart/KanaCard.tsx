@@ -2,17 +2,18 @@ import { useState } from 'react'
 
 import { Box, Flex, IconButton, Text } from '@chakra-ui/react'
 import Image from 'next/image'
-import { FaSoundcloud } from 'react-icons/fa'
+import { AiFillSound } from 'react-icons/ai'
 
 import useAudio from '@/hooks/useAudio'
 
 import Kana from '../shared/Kana'
+import { KanaType } from '../shared/types'
 
 type KanaCardProps = {
   kana: string
   romaji: string
   displayRomaji: boolean
-  alphabet: 'hiragana' | 'katakana'
+  alphabet: KanaType
   disableAnimations: boolean
 }
 
@@ -61,7 +62,8 @@ const KanaCard = ({
           size="xs"
           aria-label="play sound"
           onClick={play}
-          icon={<FaSoundcloud />}
+          icon={<AiFillSound />}
+          backgroundColor="red.200"
         />
       </Flex>
       {displayRomaji && (

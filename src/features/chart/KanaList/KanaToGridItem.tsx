@@ -2,12 +2,10 @@ import { ReactNode } from 'react'
 
 import { GridItem } from '@chakra-ui/react'
 import _map from 'lodash/map'
-import Image from 'next/image'
 
 import KanaCard from '@/features/chart/KanaCard'
-import Logo from '@/public/images/logo.webp'
 
-import { Kana } from '../../shared/types'
+import { Kana, KanaType } from '../../shared/types'
 import IndexLetter from './IndexLetter'
 
 type Filler = {
@@ -18,13 +16,12 @@ const EmptyCard = () => (
   <GridItem
     border="2px solid"
     borderColor="red.400"
+    backgroundColor="red.100"
     borderTopRadius={5}
     borderBottomRadius={5}
-    display="flex"
-    justifyContent="center"
-  >
-    <Image src={Logo} height="100%" width="100%" alt="KanaTrainer" />
-  </GridItem>
+    w="full"
+    h="full"
+  />
 )
 
 const fillers: Filler = {
@@ -53,7 +50,7 @@ export default function KanaToGridItem({
 }: {
   collection: Kana[]
   displayRomaji: boolean
-  alphabet: 'hiragana' | 'katakana'
+  alphabet: KanaType
   disableAnimations?: boolean
 }) {
   return (
@@ -62,7 +59,7 @@ export default function KanaToGridItem({
         const Item = () => (
           <GridItem
             key={romaji}
-            border="2px solid"
+            border="3px solid"
             borderColor="red.400"
             borderTopRadius={5}
             borderBottomRadius={5}

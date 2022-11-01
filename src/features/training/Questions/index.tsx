@@ -1,6 +1,6 @@
 import { Flex } from '@chakra-ui/react'
 
-import { Kana } from '@/features/shared/types'
+import { Kana, KanaType } from '@/features/shared/types'
 
 import KanaQuestion from './KanaQuestion'
 import ReverseQuestion from './ReverseQuestion'
@@ -17,7 +17,7 @@ type Props = {
   currentKana: Kana
   handleResponse: (isCorrect: boolean) => void
   trainingMode: number
-  alphabet: 'hiragana' | 'katakana'
+  alphabet: KanaType
 }
 
 export default function Questions({

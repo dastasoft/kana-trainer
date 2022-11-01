@@ -4,14 +4,14 @@ import _sampleSize from 'lodash/sampleSize'
 import _without from 'lodash/without'
 
 import Kana from '@/features/shared/Kana'
-import { Kana as TKana } from '@/features/shared/types'
+import { Kana as TKana, KanaType } from '@/features/shared/types'
 import ResponseSelector from '@/features/training/ResponseSelector'
 
 type Props = {
   kanaList: TKana[]
   currentKana: TKana
   handleResponse: (isCorrect: boolean) => void
-  alphabet: 'hiragana' | 'katakana'
+  alphabet: KanaType
 }
 
 const KanaQuestion = ({

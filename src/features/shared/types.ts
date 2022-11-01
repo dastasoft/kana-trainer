@@ -8,3 +8,5 @@ export type KanaData = {
   intermediate: Kana[]
   advanced: Kana[]
 }
+
+export type KanaType = 'hiragana' | 'katakana'

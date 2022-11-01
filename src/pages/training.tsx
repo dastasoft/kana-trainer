@@ -1,23 +1,21 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 
-import { Box, Button, Radio, RadioGroup, Stack, VStack } from '@chakra-ui/react'
-import _capitalize from 'lodash/capitalize'
-import _find from 'lodash/find'
-import _map from 'lodash/map'
+import { Box, Button, VStack } from '@chakra-ui/react'
 import _sample from 'lodash/sample'
 import _without from 'lodash/without'
 import { NextPage } from 'next'
 
-import { KanaContext } from '@/features/shared/kana-context'
-import { Kana } from '@/features/shared/types'
+import { Kana, KanaType } from '@/features/shared/types'
 import Questions, { QuestionModes } from '@/features/training/Questions'
+import SelectKanas from '@/features/training/SelectKanas'
 
 const UIStates = {
-  SELECT_MODE: 0,
-  TRAINING: 1,
-  END: 2,
+  SELECT_KANAS: 0,
+  SELECT_MODE: 1,
+  TRAINING: 2,
+  END: 3,
 } as const
 
 interface ITrainingPaths {
@@ -31,18 +29,19 @@ const TrainingPaths: ITrainingPaths = {
 } as const
 
 const Training: NextPage = () => {
-  const [trainingPath, setTrainingPath] = useState<'hiragana' | 'katakana'>(
+  const [trainingPath, setTrainingPath] = useState<KanaType>(
     TrainingPaths.HIRAGANA
   )
   const [training, setTraining] = useState<number>(
     QuestionModes.KANA_RECOGNITION
   )
   const [remainingKana, setRemainingKana] = useState([] as Kana[])
+  const [selectedKanas, setSelectedKanas] = useState([] as Kana[])
   const [currentKana, setCurrentKana] = useState<Kana | null>(null)
   const [correctResponses, setCorrectResponses] = useState(0)
-  const [UIState, setUIState] = useState<number>(UIStates.SELECT_MODE)
+  const [UIState, setUIState] = useState<number>(UIStates.SELECT_KANAS)
 
-  const kanaData = useContext(KanaContext)
+  const nextScreen = () => setUIState((prevState) => prevState + 1)
 
   const displayNext = (_remainingKana: Kana[]) => {
     if (_remainingKana.length <= 0) {
@@ -60,7 +59,7 @@ const Training: NextPage = () => {
   }
 
   const start = (trainingMode: number) => {
-    const _remainingKana = kanaData[trainingPath].basic
+    const _remainingKana = selectedKanas
     setRemainingKana(_remainingKana)
     setTraining(trainingMode)
     setUIState(UIStates.TRAINING)
@@ -71,23 +70,20 @@ const Training: NextPage = () => {
     setUIState(UIStates.SELECT_MODE)
   }
 
+  if (UIState === UIStates.SELECT_KANAS) {
+    return (
+      <SelectKanas
+        trainingPath={trainingPath}
+        setTrainingPath={setTrainingPath}
+        setSelectedKanas={setSelectedKanas}
+        nextScreen={nextScreen}
+      />
+    )
+  }
+
   if (UIState === UIStates.SELECT_MODE) {
     return (
       <Box>
-        <RadioGroup
-          onChange={(nextValue: 'hiragana' | 'katakana') =>
-            setTrainingPath(_find(TrainingPaths, (v) => v === nextValue)!)
-          }
-          value={trainingPath}
-        >
-          <Stack direction="row">
-            {_map(TrainingPaths, (value) => (
-              <Radio key={value} value={value}>
-                {_capitalize(value)}
-              </Radio>
-            ))}
-          </Stack>
-        </RadioGroup>
         <VStack mt="4">
           <Button onClick={() => start(QuestionModes.KANA_RECOGNITION)}>
             Kana Recognition
@@ -109,7 +105,7 @@ const Training: NextPage = () => {
         {currentKana && (
           <Questions
             alphabet={trainingPath}
-            kanaList={kanaData[trainingPath].basic}
+            kanaList={selectedKanas}
             currentKana={currentKana}
             handleResponse={handleResponse}
             trainingMode={training}
@@ -121,7 +117,7 @@ const Training: NextPage = () => {
 
   return (
     <Box>
-      {correctResponses} of {kanaData[trainingPath].basic.length}
+      {correctResponses} of {selectedKanas.length}
       <Button onClick={startAgain}>Start again</Button>
     </Box>
   )

@@ -1,11 +1,13 @@
 import Image from 'next/image'
 
+import { KanaType } from './types'
+
 export default function Kana({
   kana,
   alphabet,
 }: {
   kana: string
-  alphabet: 'hiragana' | 'katakana'
+  alphabet: KanaType
 }) {
   return (
     <Image

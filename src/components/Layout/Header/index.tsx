@@ -7,6 +7,7 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  Heading,
 } from '@chakra-ui/react'
 
 import NavLink from './NavLink'
@@ -22,17 +23,12 @@ export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+    <Box bg={useColorModeValue('red.500', 'red.900')} px={4} color="white">
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-        <IconButton
-          size={'md'}
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          aria-label={'Open Menu'}
-          display={{ md: 'none' }}
-          onClick={isOpen ? onClose : onOpen}
-        />
         <HStack spacing={8} alignItems={'center'}>
-          <Box>かなトレナー</Box>
+          <Heading as="h1" fontWeight="extrabold">
+            KanaTrainer
+          </Heading>
           <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
             {Links.map(({ name, href }) => (
               <NavLink key={name} href={href}>
@@ -41,6 +37,14 @@ export default function Header() {
             ))}
           </HStack>
         </HStack>
+        <IconButton
+          size={'md'}
+          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+          aria-label={'Open Menu'}
+          display={{ md: 'none' }}
+          onClick={isOpen ? onClose : onOpen}
+          backgroundColor="red.500"
+        />
       </Flex>
 
       {isOpen ? (

@@ -1,0 +1,43 @@
+html,
+body,
+#__next {
+  width: 100%;
+  height: 100%;
+
+  @apply bg-white dark:bg-black text-black dark:text-white;
+}
+
+@tailwind base;
+
+a {
+  @apply cursor-pointer;
+}
+
+a:hover {
+  @apply text-highlight transition ease-in-out;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+main {
+  @apply p-5;
+}
+
+section {
+  @apply my-20;
+}
+
+section,
+.first {
+  @apply mt-1;
+}
+
+.gradient {
+  @apply bg-gradient-to-r from-primary to-highlight bg-clip-text text-transparent;
+}
+
+.button {
+  @apply rounded border-b-8 border-red-800 bg-red-600 py-2 px-4 font-bold text-white hover:border-primary hover:bg-red-400;
+}

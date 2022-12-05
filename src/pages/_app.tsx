@@ -1,21 +1,9 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import '../styles/global.css'
+
 import type { AppProps } from 'next/app'
 
-import Layout from '@/components/Layout'
-import { KanaProvider } from '@/features/shared/kana-context'
-
-import '../styles/globals.css'
-
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <ChakraProvider>
-      <KanaProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </KanaProvider>
-    </ChakraProvider>
-  )
-}
+const MyApp = ({ Component, pageProps }: AppProps) => (
+  <Component {...pageProps} />
+)
 
 export default MyApp

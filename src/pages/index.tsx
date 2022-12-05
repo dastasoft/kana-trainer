@@ -1,13 +1,18 @@
-import type { NextPage } from 'next'
+import CTA from '@/components/Home/CTA'
+import Features from '@/components/Home/Features'
+import { Meta } from '@/layouts/Meta'
+import { RootLayout } from '@/layouts/RootLayout'
+import { AppConfig } from '@/utils/AppConfig'
 
-import Hero from '@/components/Hero'
-
-const Home: NextPage = () => {
+export default function Home() {
   return (
-    <div>
-      <Hero />
-    </div>
+    <RootLayout
+      meta={
+        <Meta title="Home | Kana Trainer" description={AppConfig.description} />
+      }
+    >
+      <CTA />
+      <Features />
+    </RootLayout>
   )
 }
-
-export default Home

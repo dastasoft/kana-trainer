@@ -17,7 +17,7 @@ const CTA = () => (
         once.
       </p>
       <div className="flex justify-center">
-        <Link href="/" className="button">
+        <Link href="/charts" className="button">
           Start Learning
         </Link>
       </div>

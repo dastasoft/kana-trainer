@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
@@ -15,6 +16,9 @@ module.exports = {
       '6xl': '4rem',
     },
     extend: {
+      fontFamily: {
+        coiny: ['Coiny', 'sans-serif'],
+      },
       colors: {
         primary: '#7f1d1d',
         secondary: '#1d1d7f',
@@ -44,7 +48,22 @@ module.exports = {
           900: '#2a4365',
         },
       },
+      gridTemplateColumns: {
+        4: '0.25rem repeat(3, minmax(0, 1fr))',
+        6: '0.25rem repeat(5, minmax(0, 1fr))',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: '#7f1d1d',
+          secondary: '#1d1d7f',
+          accent: '#7f7f1d',
+        },
+      },
+    ],
+  },
 };

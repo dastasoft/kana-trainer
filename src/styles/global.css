@@ -1,10 +1,7 @@
 html,
 body,
 #__next {
-  width: 100%;
-  height: 100%;
-
-  @apply bg-white dark:bg-black text-black dark:text-white;
+  @apply bg-white dark:bg-black text-black dark:text-white font-coiny w-full h-full;
 }
 
 @tailwind base;
@@ -21,8 +18,13 @@ a:hover {
 
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Coiny';
+  src: url('/assets/fonts/Coiny-Regular.ttf');
+}
+
 main {
-  @apply p-5;
+  @apply p-5 bg-white dark:bg-black text-black dark:text-white;
 }
 
 section {

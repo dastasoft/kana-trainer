@@ -1,10 +1,12 @@
+import type { NextPage } from 'next'
+
 import CTA from '@/components/Home/CTA'
 import Features from '@/components/Home/Features'
 import { Meta } from '@/layouts/Meta'
 import { RootLayout } from '@/layouts/RootLayout'
 import { AppConfig } from '@/utils/AppConfig'
 
-export default function Home() {
+const HomePage: NextPage = () => {
   return (
     <RootLayout
       meta={
@@ -16,3 +18,5 @@ export default function Home() {
     </RootLayout>
   )
 }
+
+export default HomePage

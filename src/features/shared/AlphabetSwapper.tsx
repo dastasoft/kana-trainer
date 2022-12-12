@@ -1,3 +1,4 @@
+import _capitalize from 'lodash/capitalize'
 import Image from 'next/image'
 import type { ChangeEvent, Dispatch, SetStateAction } from 'react'
 
@@ -13,7 +14,7 @@ const AlphabetSwapper = ({
   setCurrentAlphabet,
 }: AlphabetSwapperProps) => (
   <div className="flex items-center">
-    <label className="swap-rotate swap btn-primary btn-circle">
+    <label className="swap btn-primary swap-rotate btn-circle">
       <input
         type="checkbox"
         checked={currentAlphabet === 'katakana'}
@@ -38,9 +39,7 @@ const AlphabetSwapper = ({
         />
       </span>
     </label>
-    <h1 className="ml-3">
-      {currentAlphabet.replace(/^\w/, (c: string) => c.toUpperCase())}
-    </h1>
+    <h1 className="ml-3">{_capitalize(currentAlphabet)}</h1>
   </div>
 )
 

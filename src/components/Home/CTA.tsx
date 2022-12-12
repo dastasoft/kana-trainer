@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import Button from '../Button'
+
 const CTA = () => (
   <section className="first container mx-auto flex flex-col items-center justify-center">
     <img
@@ -16,9 +18,12 @@ const CTA = () => (
         Start your journey of learning Japanese and learn two silabaries at
         once.
       </p>
-      <div className="flex justify-center">
-        <Link href="/charts" className="button">
-          Start Learning
+      <div className="flex items-center justify-center">
+        <Link href="/charts" className="mr-5">
+          <Button as="div">Start Learning</Button>
+        </Link>
+        <Link href="/training">
+          <Button as="div">Start Training</Button>
         </Link>
       </div>
     </div>

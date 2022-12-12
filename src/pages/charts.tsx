@@ -1,15 +1,16 @@
+import type { NextPage } from 'next'
 import { useContext, useState } from 'react'
 
 import { KanaContext } from '@/context/KanaContext'
-import AlphabetSwapper from '@/features/chart/AlphabetSwapper'
 import KanaList from '@/features/chart/KanaList'
 import RomajiToggler from '@/features/chart/RomajiToggler'
+import AlphabetSwapper from '@/features/shared/AlphabetSwapper'
 import { Meta } from '@/layouts/Meta'
 import { RootLayout } from '@/layouts/RootLayout'
 import type { KanaType } from '@/types/shared'
 import { AppConfig } from '@/utils/AppConfig'
 
-export default function Charts() {
+const ChartsPage: NextPage = () => {
   const [displayRomaji, setDisplayRomaji] = useState(true)
   const [currentAlphabet, setCurrentAlphabet] = useState<KanaType>('hiragana')
 
@@ -60,3 +61,5 @@ export default function Charts() {
     </RootLayout>
   )
 }
+
+export default ChartsPage

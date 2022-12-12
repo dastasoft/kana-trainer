@@ -6,7 +6,7 @@ export default function Navigation() {
       <Link className="mr-5" href="/charts">
         Chart
       </Link>
-      <Link className="mr-5" href="/">
+      <Link className="mr-5" href="/training">
         Training
       </Link>
       <Link className="mr-5" href="/">

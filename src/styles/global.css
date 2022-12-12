@@ -39,7 +39,3 @@ section,
 .gradient {
   @apply bg-gradient-to-r from-primary to-highlight bg-clip-text text-transparent;
 }
-
-.button {
-  @apply rounded border-b-8 border-red-800 bg-red-600 py-2 px-4 font-bold text-white hover:border-primary hover:bg-red-400;
-}

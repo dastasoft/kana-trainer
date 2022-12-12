@@ -23,7 +23,9 @@ const CTA = () => (
           <Button as="div">Start Learning</Button>
         </Link>
         <Link href="/training">
-          <Button as="div">Start Training</Button>
+          <Button as="div" flavor="unselected">
+            Start Training
+          </Button>
         </Link>
       </div>
     </div>

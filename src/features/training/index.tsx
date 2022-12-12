@@ -6,23 +6,12 @@ import Button from '@/components/Button'
 import type { Kana, KanaType } from '@/types/shared'
 
 import Questions, { QuestionModes } from './Questions'
-import SelectKanas from './SelectKanas'
+import SelectTraining, { TrainingPaths } from './SelectTraining'
 
 const UIStates = {
-  SELECT_KANAS: 0,
-  SELECT_MODE: 1,
+  SELECT_TRAINING: 0,
   TRAINING: 2,
   END: 3,
-} as const
-
-interface ITrainingPaths {
-  HIRAGANA: 'hiragana'
-  KATAKANA: 'katakana'
-}
-
-const TrainingPaths: ITrainingPaths = {
-  HIRAGANA: 'hiragana',
-  KATAKANA: 'katakana',
 } as const
 
 const Training = () => {
@@ -36,9 +25,7 @@ const Training = () => {
   const [selectedKanas, setSelectedKanas] = useState([] as Kana[])
   const [currentKana, setCurrentKana] = useState<Kana | null>(null)
   const [correctResponses, setCorrectResponses] = useState(0)
-  const [UIState, setUIState] = useState<number>(UIStates.SELECT_KANAS)
-
-  const nextScreen = () => setUIState((prevState) => prevState + 1)
+  const [UIState, setUIState] = useState<number>(UIStates.SELECT_TRAINING)
 
   const displayNext = (_remainingKana: Kana[]) => {
     if (_remainingKana.length <= 0) {
@@ -55,56 +42,29 @@ const Training = () => {
     displayNext(remainingKana)
   }
 
-  const start = (trainingMode: number) => {
-    setRemainingKana(selectedKanas)
+  const start = (
+    _selectedKanas: Kana[],
+    trainingMode: number,
+    _trainingPath: KanaType
+  ) => {
+    setSelectedKanas(_selectedKanas)
+    setRemainingKana(_selectedKanas)
+    setTrainingPath(_trainingPath)
     setTraining(trainingMode)
     setUIState(UIStates.TRAINING)
-    displayNext(selectedKanas)
+    displayNext(_selectedKanas)
   }
 
-  const startAgain = () => {
-    setUIState(UIStates.SELECT_MODE)
-  }
+  const startAgain = () => setUIState(UIStates.SELECT_TRAINING)
 
-  if (UIState === UIStates.SELECT_KANAS) {
-    return (
-      <SelectKanas
-        trainingPath={trainingPath}
-        setTrainingPath={setTrainingPath}
-        setSelectedKanas={setSelectedKanas}
-        nextScreen={nextScreen}
-      />
-    )
-  }
-
-  if (UIState === UIStates.SELECT_MODE) {
-    return (
-      <div className="flex items-center justify-center">
-        <Button
-          onClick={() => start(QuestionModes.KANA_RECOGNITION)}
-          className="mr-5"
-        >
-          Kana Recognition
-        </Button>
-        <Button
-          onClick={() => start(QuestionModes.REVERSE_RECOGNITION)}
-          className="mr-5"
-        >
-          Reverse Recognition
-        </Button>
-        <Button
-          onClick={() => start(QuestionModes.SOUND_RECOGNITION)}
-          className="mr-5"
-        >
-          Sound Recognition
-        </Button>
-      </div>
-    )
+  if (UIState === UIStates.SELECT_TRAINING) {
+    return <SelectTraining start={start} />
   }
 
   if (UIState === UIStates.TRAINING) {
     return (
-      <>
+      <div>
+        <Button onClick={startAgain}>Return to select training</Button>
         {currentKana && (
           <Questions
             alphabet={trainingPath}
@@ -114,14 +74,16 @@ const Training = () => {
             trainingMode={training}
           />
         )}
-      </>
+      </div>
     )
   }
 
   return (
     <>
-      {correctResponses} of {selectedKanas.length}
-      <button onClick={startAgain}>Start again</button>
+      <p className="mb-8">
+        {correctResponses} of {selectedKanas.length}
+      </p>
+      <Button onClick={startAgain}>Start again</Button>
     </>
   )
 }

@@ -43,21 +43,20 @@ export default function Button<T extends React.ElementType = 'button'>({
   ...otherProps
 }: ButtonProps<T>) {
   const Component = as
-  const isOnTestMode = flavor === 'correct' || flavor === 'wrong'
 
   return (
     <Component
       {...otherProps}
       disabled={disabled}
       className={`${className} pointer-events-none flex h-full w-full cursor-pointer flex-col items-center justify-center rounded-lg border-x border-b-2 border-primary text-center text-white ${
-        !isOnTestMode && 'hover:bg-yellow-800'
+        flavor === 'unselected' && 'hover:bg-blue-800'
       } ${FLAVORS[flavor].bottom} ${
         disabled && 'cursor-not-allowed bg-gray-800'
       }`}
     >
       <div
         className={`pointer-events-auto w-full whitespace-nowrap rounded-lg border-y-2 border-x border-primary py-2 px-4 ${
-          !isOnTestMode && 'hover:bg-highlight'
+          flavor === 'unselected' && 'hover:bg-blue-600'
         } ${FLAVORS[flavor].top} ${
           disabled && 'cursor-not-allowed bg-gray-600'
         }`}

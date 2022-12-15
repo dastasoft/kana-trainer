@@ -1,3 +1,4 @@
+import type { ChangeEvent } from 'react'
 import { useContext, useReducer, useState } from 'react'
 
 import Button from '@/components/Button'
@@ -6,6 +7,7 @@ import AlphabetSwapper from '@/features/shared/AlphabetSwapper'
 import type { Kana, KanaType } from '@/types/shared'
 
 import { QuestionModes } from '../Questions'
+import ImgCheckbox from './ImgCheckbox'
 import { ACTIONS, initialState, trainingReducer } from './reducer'
 
 interface ITrainingPaths {
@@ -53,12 +55,12 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
 
   return (
     <>
-      <h1 className="text-5xl">Select what you want to train</h1>
+      <h1 className="mb-5 text-4xl">Traning Mode</h1>
       <AlphabetSwapper
         currentAlphabet={trainingPath}
         setCurrentAlphabet={setTrainingPath}
       />
-      <div className="my-8">
+      <div className="my-8 mx-auto max-w-xl">
         <div className="grid grid-cols-3 gap-5">
           <Button
             className="col-span-3"
@@ -105,58 +107,37 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
           >
             All Y-vowel
           </Button>
-          <div className="form-control">
-            <label className="label cursor-pointer">
-              <input
-                type="radio"
-                name="radio-10"
-                className="radio mr-3 checked:bg-primary"
-                checked={questionMode === QuestionModes.KANA_RECOGNITION}
-                onChange={(e) =>
-                  e.target.checked &&
-                  setQuestionMode(QuestionModes.KANA_RECOGNITION)
-                }
-              />
-              <span className="label-text">Kana Recognition</span>
-            </label>
-          </div>
-          <div className="form-control">
-            <label className="label cursor-pointer">
-              <input
-                type="radio"
-                name="radio-10"
-                className="radio mr-3 checked:bg-primary"
-                checked={questionMode === QuestionModes.REVERSE_RECOGNITION}
-                onChange={(e) =>
-                  e.target.checked &&
-                  setQuestionMode(QuestionModes.REVERSE_RECOGNITION)
-                }
-              />
-              <span className="label-text">Reverse Recognition</span>
-            </label>
-          </div>
-          <div className="form-control">
-            <label className="label cursor-pointer">
-              <input
-                type="radio"
-                name="radio-10"
-                className="radio mr-3 checked:bg-primary"
-                checked={questionMode === QuestionModes.SOUND_RECOGNITION}
-                onChange={(e) =>
-                  e.target.checked &&
-                  setQuestionMode(QuestionModes.SOUND_RECOGNITION)
-                }
-              />
-              <span className="label-text">Sound Recognition</span>
-            </label>
-          </div>
+          <ImgCheckbox
+            checked={questionMode === QuestionModes.KANA_RECOGNITION}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              e.target.checked &&
+              setQuestionMode(QuestionModes.KANA_RECOGNITION)
+            }
+            label="Kana Recognition"
+          />
+          <ImgCheckbox
+            checked={questionMode === QuestionModes.REVERSE_RECOGNITION}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              e.target.checked &&
+              setQuestionMode(QuestionModes.REVERSE_RECOGNITION)
+            }
+            label="Reverse Recognition"
+          />
+          <ImgCheckbox
+            checked={questionMode === QuestionModes.SOUND_RECOGNITION}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              e.target.checked &&
+              setQuestionMode(QuestionModes.SOUND_RECOGNITION)
+            }
+            label="Sound Recognition"
+          />
         </div>
         <div className="mt-12 flex justify-center">
           <Button
             onClick={onSelectMode}
             disabled={!Object.values(activeOptions).some((value) => value)}
           >
-            Select Mode
+            Start
           </Button>
         </div>
       </div>

@@ -63,16 +63,20 @@ const Training = () => {
 
   if (UIState === UIStates.TRAINING) {
     return (
-      <div>
-        <Button onClick={startAgain}>Return to select training</Button>
+      <div className="flex h-full flex-col">
+        <Button className="mb-5" onClick={startAgain}>
+          Return to select training
+        </Button>
         {currentKana && (
-          <Questions
-            alphabet={trainingPath}
-            kanaList={selectedKanas}
-            currentKana={currentKana}
-            handleResponse={handleResponse}
-            trainingMode={training}
-          />
+          <div className="flex-1">
+            <Questions
+              alphabet={trainingPath}
+              kanaList={selectedKanas}
+              currentKana={currentKana}
+              handleResponse={handleResponse}
+              trainingMode={training}
+            />
+          </div>
         )}
       </div>
     )

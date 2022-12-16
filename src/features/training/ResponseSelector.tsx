@@ -34,7 +34,7 @@ export default function ResponseSelector({
   }
 
   return (
-    <div className="grid w-full grid-cols-2 gap-3">
+    <div className="grid w-full grid-cols-2 gap-5">
       {allOptions.map((option: string) => (
         <Button
           key={option}

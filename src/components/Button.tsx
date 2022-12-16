@@ -48,7 +48,7 @@ export default function Button<T extends React.ElementType = 'button'>({
     <Component
       {...otherProps}
       disabled={disabled}
-      className={`${className} pointer-events-none flex h-full w-full cursor-pointer flex-col items-center justify-center rounded-lg border-x border-b-2 border-primary text-center text-white ${
+      className={`${className} pointer-events-none flex w-full cursor-pointer flex-col items-center justify-center rounded-lg border-x border-b-2 border-primary text-center text-white ${
         flavor === 'unselected' && 'hover:bg-blue-800'
       } ${FLAVORS[flavor].bottom} ${
         disabled && 'cursor-not-allowed bg-gray-800'

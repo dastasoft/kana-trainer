@@ -109,5 +109,5 @@
       "@semantic-release/github"
     ]
   },
-  "author": "dastasoft"
+  "author": "dastasoft <dastasoft@protonmail.com> (https://dastasoft.com)"
 }

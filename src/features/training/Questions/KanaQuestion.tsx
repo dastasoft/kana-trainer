@@ -29,16 +29,21 @@ const KanaQuestion = ({
   )
 
   return (
-    <>
-      <div className="mb-5 bg-white">
-        <Kana kana={currentKana.kana} alphabet={alphabet} />
+    <div className="mx-auto flex h-full max-w-5xl flex-col">
+      <div className="relative mb-5 flex flex-1 rounded-lg bg-gray-700">
+        <Kana
+          className="motion-safe:animate-fade-in-left"
+          kana={currentKana.kana}
+          alphabet={alphabet}
+          fill
+        />
       </div>
       <ResponseSelector
         correctOption={currentKana.romaji}
         options={options}
         handleResponse={handleResponse}
       />
-    </>
+    </div>
   )
 }
 

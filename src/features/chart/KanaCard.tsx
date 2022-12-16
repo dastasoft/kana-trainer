@@ -34,16 +34,18 @@ const KanaCard = ({
         key={romaji}
         className="flex h-full w-full flex-1 flex-col items-center justify-center rounded-lg border-2 border-primary bg-white py-1 hover:bg-gray-400 md:flex-row md:justify-between md:px-2"
       >
-        <div onClick={toggleHandler} className="cursor-pointer md:mr-2">
+        <div
+          onClick={toggleHandler}
+          className="min-h-8 relative h-full w-2/3 cursor-pointer md:mr-2"
+        >
           {strokeOrderVisible ? (
             <Image
               src={`/assets/images/animated/${alphabet}/${kana}.gif`}
-              height="150"
-              width="150"
+              fill
               alt={kana}
             />
           ) : (
-            <Kana kana={kana} alphabet={alphabet} />
+            <Kana kana={kana} alphabet={alphabet} fill />
           )}
         </div>
         <button

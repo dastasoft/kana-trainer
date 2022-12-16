@@ -57,9 +57,5 @@ export default function Questions({
     return null
   }
 
-  return (
-    <div className="flex flex-col items-center">
-      <Question />
-    </div>
-  )
+  return <Question />
 }

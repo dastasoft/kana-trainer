@@ -54,7 +54,7 @@ export default function Button<T extends React.ElementType = 'button'>({
       } ${disabled && 'cursor-not-allowed'}`}
     >
       <div
-        className={`pointer-events-auto w-full whitespace-nowrap rounded-lg border-y-2 border-x border-primary py-2 px-4${
+        className={`pointer-events-auto w-full whitespace-nowrap rounded-lg border-y-2 border-x border-primary py-2 px-4 ${
           FLAVORS[flavor].top
         } ${disabled && 'cursor-not-allowed'}`}
       >

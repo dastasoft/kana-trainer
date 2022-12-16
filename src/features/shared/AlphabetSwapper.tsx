@@ -14,7 +14,7 @@ const AlphabetSwapper = ({
   setCurrentAlphabet,
 }: AlphabetSwapperProps) => (
   <div className="flex items-center">
-    <label className="swap btn-primary swap-rotate btn-circle">
+    <label className="swap-rotate swap btn-primary btn-circle animate-pulse">
       <input
         type="checkbox"
         checked={currentAlphabet === 'katakana'}

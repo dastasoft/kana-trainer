@@ -4,7 +4,7 @@ import { AppConfig } from '@/utils/AppConfig'
 
 export default function Logo() {
   return (
-    <Link href="/" className="mb-3 flex items-center font-medium sm:mb-0">
+    <Link href="/" className="flex items-center font-medium">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

@@ -12,9 +12,7 @@ export default function Navigation() {
       <Link className="mr-5" href="/">
         Resources
       </Link>
-      <Link className="" href="/">
-        About
-      </Link>
+      <Link href="/">About</Link>
     </nav>
   )
 }

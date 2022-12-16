@@ -48,15 +48,16 @@ export default function ResponseSelector({
       {allOptions.map((option: string) => (
         <Button
           key={option}
-          disabled={iddleResponse}
-          as="div"
+          disabled={!!responseSelected}
           id={option}
           className={`text-2xl uppercase ${
             responseSelected === option && iddleResponse && 'animate-pulse'
           }`}
           onClick={(e) => setResponseSelected(e.currentTarget.id)}
           flavor={
-            revealResponses
+            responseSelected === option && !revealResponses
+              ? 'selected'
+              : revealResponses
               ? option === correctOption
                 ? 'correct'
                 : 'wrong'

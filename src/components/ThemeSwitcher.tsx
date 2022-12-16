@@ -12,7 +12,7 @@ export default function ThemeSwitcher() {
   }
 
   return (
-    <label className="swap swap-rotate h-6">
+    <label className="swap-rotate swap h-6">
       <input
         type="checkbox"
         checked={darkSide}

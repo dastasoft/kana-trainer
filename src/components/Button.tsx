@@ -50,13 +50,13 @@ export default function Button<T extends React.ElementType = 'button'>({
       {...otherProps}
       disabled={disabled}
       className={`${className} pointer-events-none flex w-full cursor-pointer flex-col items-center justify-center rounded-lg border-x border-b-2 border-primary text-center text-white ${
-        flavor === 'unselected' && 'hover:bg-blue-800'
-      } ${FLAVORS[flavor].bottom} ${disabled && 'cursor-not-allowed'}`}
+        FLAVORS[flavor].bottom
+      } ${disabled && 'cursor-not-allowed'}`}
     >
       <div
-        className={`pointer-events-auto w-full whitespace-nowrap rounded-lg border-y-2 border-x border-primary py-2 px-4 ${
-          flavor === 'unselected' && 'hover:bg-blue-600'
-        } ${FLAVORS[flavor].top} ${disabled && 'cursor-not-allowed'}`}
+        className={`pointer-events-auto w-full whitespace-nowrap rounded-lg border-y-2 border-x border-primary py-2 px-4${
+          FLAVORS[flavor].top
+        } ${disabled && 'cursor-not-allowed'}`}
       >
         {children}
       </div>

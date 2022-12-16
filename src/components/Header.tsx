@@ -1,7 +1,6 @@
-import ThemeSwitcher from '@/features/themeSwitcher'
-
 import Logo from './Logo'
 import Navigation from './Navigation'
+import ThemeSwitcher from './ThemeSwitcher'
 
 export default function Header() {
   return (

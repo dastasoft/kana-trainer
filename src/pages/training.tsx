@@ -10,7 +10,7 @@ const TrainingPage: NextPage = () => {
     <RootLayout
       meta={
         <Meta
-          title="Charts | Kana Trainer"
+          title="Training | Kana Trainer"
           description={AppConfig.description}
         />
       }

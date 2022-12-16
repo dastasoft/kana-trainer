@@ -46,7 +46,6 @@ export default function KanaToGridItem({
       {collection.map(({ kana, romaji }) => {
         const Item = () => (
           <KanaCard
-            key={romaji}
             kana={kana}
             romaji={romaji}
             displayRomaji={displayRomaji}

@@ -105,9 +105,11 @@ function Twitter() {
 export default function Fotter() {
   return (
     <footer className="bg-primary">
-      <div className="container mx-auto flex flex-col items-center px-5 py-8 sm:flex-row">
-        <Logo />
-        <p className="mt-4 text-sm sm:ml-4 sm:mt-0 sm:border-l-2 sm:border-white sm:py-2 sm:pl-4">
+      <div className="mx-auto flex flex-col items-center py-4 sm:flex-row sm:py-8 sm:px-5">
+        <div className="hidden sm:visible">
+          <Logo />
+        </div>
+        <p className="text-sm sm:ml-4 sm:mt-0 sm:border-l-2 sm:border-white sm:py-2 sm:pl-4">
           © 2022 {AppConfig.title} —
           <a
             href="https://dastasoft.com"
@@ -118,7 +120,7 @@ export default function Fotter() {
             @dastasoft
           </a>
         </p>
-        <span className="mt-4 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
+        <span className="mt-2 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
           <Mail />
           <Linkedin />
           <GitHub />

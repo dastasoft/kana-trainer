@@ -4,6 +4,7 @@ type ButtonOwnProps<T extends React.ElementType> = {
   children: ReactNode
   flavor?: 'regular' | 'unselected' | 'selected' | 'correct' | 'wrong'
   variant?: '3d' | 'flat'
+  disabled?: boolean
   as?: T | 'button' | 'div'
 }
 
@@ -39,7 +40,7 @@ export default function Button<T extends React.ElementType = 'button'>({
   variant = '3d',
   as = 'button',
   className,
-  disabled,
+  disabled = false,
   ...otherProps
 }: ButtonProps<T>) {
   const Component = as
@@ -50,16 +51,12 @@ export default function Button<T extends React.ElementType = 'button'>({
       disabled={disabled}
       className={`${className} pointer-events-none flex w-full cursor-pointer flex-col items-center justify-center rounded-lg border-x border-b-2 border-primary text-center text-white ${
         flavor === 'unselected' && 'hover:bg-blue-800'
-      } ${FLAVORS[flavor].bottom} ${
-        disabled && 'cursor-not-allowed bg-gray-800'
-      }`}
+      } ${FLAVORS[flavor].bottom} ${disabled && 'cursor-not-allowed'}`}
     >
       <div
         className={`pointer-events-auto w-full whitespace-nowrap rounded-lg border-y-2 border-x border-primary py-2 px-4 ${
           flavor === 'unselected' && 'hover:bg-blue-600'
-        } ${FLAVORS[flavor].top} ${
-          disabled && 'cursor-not-allowed bg-gray-600'
-        }`}
+        } ${FLAVORS[flavor].top} ${disabled && 'cursor-not-allowed'}`}
       >
         {children}
       </div>

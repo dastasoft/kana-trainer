@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 
 import type { Kana } from '@/types/shared'
 
-import ResponseSelector from '../ResponseSelector'
+import QuestionPanel from './QuestionPanel'
 
 type Props = {
   kanaList: Kana[]
@@ -20,14 +20,13 @@ const ReverseQuestion = ({ kanaList, currentKana, handleResponse }: Props) => {
   )
 
   return (
-    <>
-      <p className="font-bold uppercase">{currentKana.romaji}</p>
-      <ResponseSelector
-        correctOption={currentKana.kana}
-        options={options}
-        handleResponse={handleResponse}
-      />
-    </>
+    <QuestionPanel
+      correctOption={currentKana.kana}
+      options={options}
+      handleResponse={handleResponse}
+    >
+      <p className="text-6xl font-bold uppercase">{currentKana.romaji}</p>
+    </QuestionPanel>
   )
 }
 

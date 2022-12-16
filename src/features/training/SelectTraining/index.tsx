@@ -75,6 +75,7 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
             All Kanas
           </Button>
           <Button
+            className="text-sm"
             onClick={() =>
               dispatch({
                 type: ACTIONS.ALL_BASIC,
@@ -86,6 +87,7 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
             All Basic
           </Button>
           <Button
+            className="text-sm"
             onClick={() =>
               dispatch({
                 type: ACTIONS.ALL_INTERMEDIATE,
@@ -97,6 +99,7 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
             All Voiced
           </Button>
           <Button
+            className="text-sm"
             onClick={() =>
               dispatch({
                 type: ACTIONS.ALL_ADVANCED,

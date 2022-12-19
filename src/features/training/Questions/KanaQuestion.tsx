@@ -3,14 +3,14 @@ import _without from 'lodash/without'
 import { useMemo } from 'react'
 
 import Kana from '@/features/shared/Kana'
-import type { Kana as TKana, KanaType } from '@/types/shared'
+import type { HandleResponse, Kana as TKana, KanaType } from '@/types/shared'
 
 import QuestionPanel from './QuestionPanel'
 
 type KanaQuestionProps = {
   kanaList: TKana[]
   currentKana: TKana
-  handleResponse: (isCorrect: boolean) => void
+  handleResponse: HandleResponse
   alphabet: KanaType
 }
 
@@ -27,14 +27,16 @@ const KanaQuestion = ({
       ),
     [currentKana, kanaList]
   )
+  const question = currentKana.kana
 
   return (
     <QuestionPanel
+      question={question}
       correctOption={currentKana.romaji}
       options={options}
       handleResponse={handleResponse}
     >
-      <Kana kana={currentKana.kana} alphabet={alphabet} fill />
+      <Kana kana={question} alphabet={alphabet} fill />
     </QuestionPanel>
   )
 }

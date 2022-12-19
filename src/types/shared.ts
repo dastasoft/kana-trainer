@@ -10,3 +10,9 @@ export type KanaData = {
 }
 
 export type KanaType = 'hiragana' | 'katakana'
+
+export type HandleResponse = (
+  question: string,
+  responseSelected: string,
+  correctOption: string
+) => void

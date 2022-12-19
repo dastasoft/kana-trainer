@@ -1,15 +1,19 @@
 import type { ReactNode } from 'react'
 
+import type { HandleResponse } from '@/types/shared'
+
 import ResponseSelector from '../ResponseSelector'
 
 type QuestionPanelProps = {
+  question: string
   children: ReactNode
   correctOption: string
   options: string[]
-  handleResponse: (isCorrect: boolean) => void
+  handleResponse: HandleResponse
 }
 
 export default function QuestionPanel({
+  question,
   children,
   correctOption,
   options,
@@ -23,6 +27,7 @@ export default function QuestionPanel({
         </div>
       </div>
       <ResponseSelector
+        question={question}
         correctOption={correctOption}
         options={options}
         handleResponse={handleResponse}

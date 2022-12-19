@@ -1,4 +1,4 @@
-import type { Kana, KanaType } from '@/types/shared'
+import type { HandleResponse, Kana, KanaType } from '@/types/shared'
 
 import KanaQuestion from './KanaQuestion'
 import ReverseQuestion from './ReverseQuestion'
@@ -13,7 +13,7 @@ export const QuestionModes = {
 type QuestionsProps = {
   kanaList: Kana[]
   currentKana: Kana
-  handleResponse: (isCorrect: boolean) => void
+  handleResponse: HandleResponse
   trainingMode: number
   alphabet: KanaType
 }

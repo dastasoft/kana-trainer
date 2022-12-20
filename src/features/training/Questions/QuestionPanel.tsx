@@ -21,8 +21,8 @@ export default function QuestionPanel({
 }: QuestionPanelProps) {
   return (
     <div className="mx-auto flex h-full max-w-5xl flex-col">
-      <div className="relative mb-5 flex flex-1 rounded-lg bg-gray-700">
-        <div className="flex w-full items-center justify-center motion-safe:animate-fade-in-left">
+      <div className="mb-5 flex flex-1 rounded-lg bg-gray-700">
+        <div className="relative flex w-full items-center justify-center motion-safe:animate-fade-in-left">
           {children}
         </div>
       </div>

@@ -43,6 +43,9 @@ const KanaCard = ({
               src={`/assets/images/animated/${alphabet}/${kana}.gif`}
               fill
               alt={kana}
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
             />
           ) : (
             <Kana kana={kana} alphabet={alphabet} fill />

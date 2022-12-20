@@ -17,9 +17,6 @@ module.exports = {
       '6xl': '4rem',
     },
     extend: {
-      fontFamily: {
-        coiny: ['Coiny', 'sans-serif'],
-      },
       colors: {
         primary: '#7f1d1d',
         secondary: '#1d1d7f',

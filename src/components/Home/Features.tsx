@@ -12,7 +12,7 @@ const Bullet = ({ text }: { text: string }) => (
         clipRule="evenodd"
       ></path>
     </svg>
-    <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
+    <span className="text-base font-medium leading-tight text-white">
       {text}
     </span>
   </li>
@@ -31,10 +31,7 @@ const Features = () => (
             information you need.
           </p>
 
-          <ul
-            role="list"
-            className="my-7 space-y-5 border-t border-black pt-8 dark:border-white"
-          >
+          <ul role="list" className="my-7 space-y-5 border-t border-white pt-8">
             <Bullet text=" Both alphabets" />
             <Bullet text="Stroke Order" />
             <Bullet text="Sound example" />
@@ -52,8 +49,8 @@ const Features = () => (
           src="https://dummyimage.com/720x600"
           alt="hero"
         />
-        <div className="text-gray-500 dark:text-gray-400 sm:text-lg">
-          <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+        <div className="text-gray-400 sm:text-lg">
+          <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-white">
             Quizz Training
           </h2>
           <p className="mb-8 font-light lg:text-xl">
@@ -61,31 +58,12 @@ const Features = () => (
             will need to use both alphabets every day.
           </p>
 
-          <ul
-            role="list"
-            className="my-7 space-y-5 border-t border-black pt-8 dark:border-white"
-          >
+          <ul role="list" className="my-7 space-y-5 border-t border-white pt-8">
             <Bullet text="Kana Recognition" />
             <Bullet text="Sound Recognition" />
             <Bullet text="Reverse Recognition" />
           </ul>
         </div>
-      </div>
-      <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
-        <div className="sm:text-lg">
-          <h2 className="mb-4 text-3xl font-extrabold tracking-tight">
-            Resources
-          </h2>
-          <p className="mb-8 font-light lg:text-xl">
-            Find all the resources you will need to deep dive into the learning
-            of alphabets and future steps.
-          </p>
-        </div>
-        <img
-          className="mb-4 hidden w-full rounded-lg lg:mb-0 lg:flex"
-          src="https://dummyimage.com/720x600"
-          alt="hero"
-        />
       </div>
     </div>
   </section>

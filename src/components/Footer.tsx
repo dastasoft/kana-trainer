@@ -8,6 +8,7 @@ function Mail() {
       href="mailto:dastasoft@protonmail.com"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Send mail to dastasoft"
     >
       <svg
         aria-hidden="true"
@@ -36,6 +37,7 @@ function Linkedin() {
       href="https://www.linkedin.com/in/dastasoft/"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Go to dastasoft's linkedin"
     >
       <svg
         aria-hidden="true"
@@ -64,6 +66,7 @@ function GitHub() {
       href="https://github.com/dastasoft"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Go to dastasoft's github"
     >
       <svg
         aria-hidden="true"
@@ -88,7 +91,10 @@ function GitHub() {
 
 function Twitter() {
   return (
-    <a href="https://twitter.com/dastasoft">
+    <a
+      href="https://twitter.com/dastasoft"
+      aria-label="Go to dastasoft's twitter"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

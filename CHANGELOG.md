@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/dastasoft/kana-trainer/compare/v1.1.0...v1.1.1) (2022-12-20)
+
+
+### Bug Fixes
+
+* font optimization ([1f51b23](https://github.com/dastasoft/kana-trainer/commit/1f51b233ef5076be523e0f5a6d87dc8b01d94fa1))
+* mobile design and dark mode only ([d4ca631](https://github.com/dastasoft/kana-trainer/commit/d4ca63168425c40529820caef29e821d5267a963))
+* sound without preload and aria labels ([0e58814](https://github.com/dastasoft/kana-trainer/commit/0e58814206fcfc027e685552c61f8c4678e87558))
+
 # [1.1.0](https://github.com/dastasoft/kana-trainer/compare/v1.0.0...v1.1.0) (2022-12-20)
 
 

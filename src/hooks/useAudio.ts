@@ -5,7 +5,8 @@ import { useState } from 'react'
 const defaultHowlConfig = {
   autoplay: false,
   loop: false,
-  volume: 0.2,
+  volume: 1,
+  preload: false,
 }
 
 const useAudio = (soundName: string) => {
@@ -17,6 +18,7 @@ const useAudio = (soundName: string) => {
   )
 
   const play = () => {
+    sound.load()
     sound.play()
   }
 

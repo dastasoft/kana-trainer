@@ -54,6 +54,7 @@ const KanaCard = ({
         <button
           className="btn-primary btn-xs btn-circle btn py-1 lg:btn-md"
           onClick={play}
+          aria-label={`Play sound for ${romaji}`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

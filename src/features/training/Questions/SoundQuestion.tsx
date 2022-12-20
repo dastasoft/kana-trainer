@@ -3,14 +3,14 @@ import _without from 'lodash/without'
 import { useEffect, useMemo } from 'react'
 
 import useAudio from '@/hooks/useAudio'
-import type { Kana } from '@/types/shared'
+import type { HandleResponse, Kana } from '@/types/shared'
 
 import QuestionPanel from './QuestionPanel'
 
 type Props = {
   kanaList: Kana[]
   currentKana: Kana
-  handleResponse: (isCorrect: boolean) => void
+  handleResponse: HandleResponse
 }
 
 const SoundQuestion = ({ kanaList, currentKana, handleResponse }: Props) => {
@@ -20,6 +20,7 @@ const SoundQuestion = ({ kanaList, currentKana, handleResponse }: Props) => {
       _sampleSize(_without(kanaList, currentKana), 3).map(({ kana }) => kana),
     [currentKana, kanaList]
   )
+  const question = currentKana.kana
 
   useEffect(() => {
     if (play) play()
@@ -27,6 +28,7 @@ const SoundQuestion = ({ kanaList, currentKana, handleResponse }: Props) => {
 
   return (
     <QuestionPanel
+      question={question}
       correctOption={currentKana.kana}
       options={options}
       handleResponse={handleResponse}

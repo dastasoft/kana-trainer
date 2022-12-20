@@ -2,14 +2,14 @@ import _sampleSize from 'lodash/sampleSize'
 import _without from 'lodash/without'
 import { useMemo } from 'react'
 
-import type { Kana } from '@/types/shared'
+import type { HandleResponse, Kana } from '@/types/shared'
 
 import QuestionPanel from './QuestionPanel'
 
 type Props = {
   kanaList: Kana[]
   currentKana: Kana
-  handleResponse: (isCorrect: boolean) => void
+  handleResponse: HandleResponse
 }
 
 const ReverseQuestion = ({ kanaList, currentKana, handleResponse }: Props) => {
@@ -18,14 +18,16 @@ const ReverseQuestion = ({ kanaList, currentKana, handleResponse }: Props) => {
       _sampleSize(_without(kanaList, currentKana), 3).map(({ kana }) => kana),
     [currentKana, kanaList]
   )
+  const question = currentKana.romaji
 
   return (
     <QuestionPanel
+      question={question}
       correctOption={currentKana.kana}
       options={options}
       handleResponse={handleResponse}
     >
-      <p className="text-6xl font-bold uppercase">{currentKana.romaji}</p>
+      <p className="text-6xl font-bold uppercase">{question}</p>
     </QuestionPanel>
   )
 }

@@ -3,17 +3,20 @@ import _shuffle from 'lodash/shuffle'
 import { useEffect, useMemo, useState } from 'react'
 
 import Button from '@/components/Button'
+import type { HandleResponse } from '@/types/shared'
 
 const NEXT_QUESTION_TIME = 1500
 const REVEAL_RESPONSE_TIME = 1000
 
 type ResponseSelectorProps = {
+  question: string
   correctOption: string
   options: string[]
-  handleResponse: (isCorrect: boolean) => void
+  handleResponse: HandleResponse
 }
 
 export default function ResponseSelector({
+  question = '',
   correctOption = '',
   options = [],
   handleResponse,
@@ -36,7 +39,7 @@ export default function ResponseSelector({
         if (handleResponse) {
           setTimeout(() => {
             setRevealResponses(false)
-            handleResponse(responseSelected === correctOption)
+            handleResponse(question, responseSelected, correctOption)
           }, NEXT_QUESTION_TIME)
         }
       }, REVEAL_RESPONSE_TIME)

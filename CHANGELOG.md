@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/dastasoft/kana-trainer/compare/v1.0.0...v1.1.0) (2022-12-20)
+
+
+### Bug Fixes
+
+* button background ([4e6f674](https://github.com/dastasoft/kana-trainer/commit/4e6f67498c35bc1aff17af3c41bfdab5479ea913))
+
+
+### Features
+
+* result page ([9fdf76c](https://github.com/dastasoft/kana-trainer/commit/9fdf76c0095b7eb15626acd426c30249091ffa50))
+* training result page draft ([ae54aed](https://github.com/dastasoft/kana-trainer/commit/ae54aedd8b2b27e6717430c03d42ce7ed5007ce5))
+
 # 1.0.0 (2022-12-16)
 
 

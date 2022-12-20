@@ -1,6 +1,5 @@
 import Logo from './Logo'
 import Navigation from './Navigation'
-import ThemeSwitcher from './ThemeSwitcher'
 
 export default function Header() {
   return (
@@ -9,7 +8,6 @@ export default function Header() {
         <div className="w-full flex-auto">
           <Logo />
         </div>
-        <ThemeSwitcher />
       </div>
       <Navigation />
     </header>

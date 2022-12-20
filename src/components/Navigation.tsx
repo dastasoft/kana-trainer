@@ -9,10 +9,6 @@ export default function Navigation() {
       <Link className="mr-5" href="/training">
         Training
       </Link>
-      <Link className="mr-5" href="/">
-        Resources
-      </Link>
-      <Link href="/">About</Link>
     </nav>
   )
 }

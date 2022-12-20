@@ -65,22 +65,6 @@ const Features = () => (
           </ul>
         </div>
       </div>
-      <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
-        <div className="sm:text-lg">
-          <h2 className="mb-4 text-3xl font-extrabold tracking-tight">
-            Resources
-          </h2>
-          <p className="mb-8 font-light lg:text-xl">
-            Find all the resources you will need to deep dive into the learning
-            of alphabets and future steps.
-          </p>
-        </div>
-        <img
-          className="mb-4 hidden w-full rounded-lg lg:mb-0 lg:flex"
-          src="https://dummyimage.com/720x600"
-          alt="hero"
-        />
-      </div>
     </div>
   </section>
 )

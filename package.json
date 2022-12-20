@@ -22,11 +22,12 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@next/font": "^13.0.7",
     "canvas-confetti": "^1.6.0",
     "daisyui": "^2.42.1",
     "howler": "^2.2.3",
     "lodash": "^4.17.21",
-    "next": "^13.0.6",
+    "next": "^13.0.7",
     "next-seo": "^5.14.1",
     "next-sitemap": "^3.1.32",
     "react": "^18.2.0",

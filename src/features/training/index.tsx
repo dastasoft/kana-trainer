@@ -77,7 +77,7 @@ const Training = () => {
 
   if (UIState === UIStates.TRAINING) {
     return (
-      <div className="flex h-full flex-col">
+      <div>
         <div className="mb-6 flex h-5 items-center justify-between">
           <Button className="w-min" onClick={startAgain} variant="flat">
             <svg
@@ -99,15 +99,13 @@ const Training = () => {
           </Button>
         </div>
         {currentKana && (
-          <div className="flex-1">
-            <Questions
-              alphabet={trainingPath}
-              kanaList={selectedKanas}
-              currentKana={currentKana}
-              handleResponse={handleResponse}
-              trainingMode={training}
-            />
-          </div>
+          <Questions
+            alphabet={trainingPath}
+            kanaList={selectedKanas}
+            currentKana={currentKana}
+            handleResponse={handleResponse}
+            trainingMode={training}
+          />
         )}
       </div>
     )

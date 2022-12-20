@@ -20,9 +20,9 @@ export default function QuestionPanel({
   handleResponse,
 }: QuestionPanelProps) {
   return (
-    <div className="mx-auto flex h-full max-w-5xl flex-col">
-      <div className="mb-5 flex flex-1 rounded-lg bg-gray-700">
-        <div className="relative flex w-full items-center justify-center motion-safe:animate-fade-in-left">
+    <div className="flex h-96 flex-col">
+      <div className="mb-5 flex-1 rounded-lg bg-gray-700">
+        <div className="relative h-full motion-safe:animate-fade-in-left">
           {children}
         </div>
       </div>

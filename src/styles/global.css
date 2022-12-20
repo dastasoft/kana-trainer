@@ -5,16 +5,11 @@
 html,
 body,
 #__next {
-  @apply bg-black text-white font-coiny w-full;
+  @apply bg-black text-white w-full;
 }
 
 #__next {
   @apply max-w-xl mx-auto border border-primary;
-}
-
-@font-face {
-  font-family: 'Coiny';
-  src: url('/assets/fonts/Coiny-Regular.ttf');
 }
 
 body::-webkit-scrollbar {
@@ -39,7 +34,7 @@ a:hover {
 }
 
 main {
-  @apply p-5 bg-black text-white;
+  @apply p-8 bg-black text-white;
 }
 
 section {

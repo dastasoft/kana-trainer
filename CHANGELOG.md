@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/dastasoft/kana-trainer/compare/v1.2.0...v1.2.1) (2022-12-22)
+
+
+### Bug Fixes
+
+* seo images ([1d5de7e](https://github.com/dastasoft/kana-trainer/commit/1d5de7e906990b441fe9c7ad02a095aeceaa912f))
+
 # [1.2.0](https://github.com/dastasoft/kana-trainer/compare/v1.1.1...v1.2.0) (2022-12-22)
 
 

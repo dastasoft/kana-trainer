@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/dastasoft/kana-trainer/compare/v1.1.1...v1.2.0) (2022-12-22)
+
+
+### Features
+
+* add texts ([a9fb291](https://github.com/dastasoft/kana-trainer/commit/a9fb291e69c22aa3c568b0096c9e108bfe61051c))
+* all sounds ([b8afd6b](https://github.com/dastasoft/kana-trainer/commit/b8afd6be745d8f91cae099979f1f9570517d06aa))
+* images and isolated texts on jsons ([c3b02a2](https://github.com/dastasoft/kana-trainer/commit/c3b02a288d24d017055adaf3ff2c9aa177308677))
+
 ## [1.1.1](https://github.com/dastasoft/kana-trainer/compare/v1.1.0...v1.1.1) (2022-12-20)
 
 

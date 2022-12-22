@@ -1,11 +1,12 @@
 {
   "kanaAlphabets": {
     "hiragana": "Hiragana",
-    "katakana": "Katakana"
+    "katakana": "Katakana",
+    "romaji": "Romaji"
   },
   "kanaTypes": {
     "basic": "Basic",
-    "intermediate": "Voiced",
-    "advanced": "Y-vowel"
+    "intermediate": "Dakuten / Handakuten",
+    "advanced": "Compound"
   }
 }

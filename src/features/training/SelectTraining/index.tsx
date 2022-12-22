@@ -68,7 +68,7 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
       <div className="my-8 mx-auto max-w-xl">
         <div className="grid grid-cols-3 gap-5">
           <Button
-            className="col-span-3"
+            className="col-span-3 text-xl"
             onClick={() => {
               dispatch({
                 type: ACTIONS.ALL_KANAS,
@@ -80,7 +80,7 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
             {training.actions.allKanas}
           </Button>
           <Button
-            className="text-sm"
+            className="col-span-3 mx-auto w-1/2 text-sm sm:col-span-1 sm:w-full"
             onClick={() =>
               dispatch({
                 type: ACTIONS.ALL_BASIC,
@@ -92,7 +92,7 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
             {training.actions.allBasic}
           </Button>
           <Button
-            className="text-sm"
+            className="col-span-3 mx-auto w-1/2 text-sm sm:col-span-1 sm:w-full"
             onClick={() =>
               dispatch({
                 type: ACTIONS.ALL_INTERMEDIATE,
@@ -104,7 +104,7 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
             {training.actions.allIntermediate}
           </Button>
           <Button
-            className="text-sm"
+            className="col-span-3 mx-auto w-1/2 text-sm sm:col-span-1 sm:w-full"
             onClick={() =>
               dispatch({
                 type: ACTIONS.ALL_ADVANCED,
@@ -150,6 +150,10 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
           >
             {training.actions.start}
           </Button>
+        </div>
+        <div className="mt-12 rounded-lg border border-primary p-5 leading-relaxed">
+          <p className="mb-5">{training.description1}</p>
+          <p>{training.description2}</p>
         </div>
       </div>
     </>

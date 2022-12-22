@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { ChangeEvent } from 'react'
 
 type ImgCheckboxProps = {
@@ -24,13 +25,21 @@ export default function ImgCheckbox({
           onChange={onChange}
         />
         <span className="label-text text-xs">{label}</span>
-        <img
-          src={imgURL}
-          alt={label}
-          className={` rounded-md border-4 ${
+        <div
+          className={`w-full rounded-md border-4 ${
             checked ? 'border-primary' : 'border-transparent'
           }`}
-        />
+        >
+          <Image
+            src={imgURL}
+            alt={label}
+            height={150}
+            width={150}
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+          />
+        </div>
       </label>
     </div>
   )

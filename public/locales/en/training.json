@@ -1,0 +1,23 @@
+{
+  "title": "Traning Mode",
+  "description1": "Flashcards are a simple but effective tool for learning kana characters. Start with the basic kana characters and later on expand to others, the system will mix for you the order each time.",
+  "description2": "Once you get confidet with Kana Recognition try the other modes to increase your retention. Regular review is key to learning all the kanas.",
+  "actions": {
+    "allKanas": "All Kanas",
+    "allBasic": "All Basic",
+    "allIntermediate": "All Dakuten",
+    "allAdvanced": "All Compound",
+    "kanaRecognition": "Kana Recognition",
+    "reverseRecognition": "Reverse Recognition",
+    "soundRecognition": "Sound Recognition",
+    "start": "Start"
+  },
+  "results": {
+    "title": "Results {{correctResponses}} of {{numberOfQuestions}}",
+    "subtitleAbove50": "You're doing great!",
+    "subtitleBelow50": "Try going back to the Charts section for more practice.",
+    "returnToSelectTraining": "Return to Select Training",
+    "yourAnswer": "Your answer:",
+    "correctResponse": "Correct answer:"
+  }
+}

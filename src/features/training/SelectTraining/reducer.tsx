@@ -5,6 +5,7 @@ const enum ACTIONS {
   ALL_BASIC,
   ALL_INTERMEDIATE,
   ALL_ADVANCED,
+  RESET,
 }
 
 type State = {
@@ -22,6 +23,7 @@ type Action =
   | { type: ACTIONS.ALL_BASIC; payload: Kana[] }
   | { type: ACTIONS.ALL_INTERMEDIATE; payload: Kana[] }
   | { type: ACTIONS.ALL_ADVANCED; payload: Kana[] }
+  | { type: ACTIONS.RESET }
 
 const initialState: State = {
   selectedKanas: { basic: [], intermediate: [], advanced: [] },
@@ -130,6 +132,8 @@ const trainingReducer = (state: State, action: Action): State => {
           allAdvanced: false,
         },
       }
+    case ACTIONS.RESET:
+      return initialState
     default:
       return state
   }

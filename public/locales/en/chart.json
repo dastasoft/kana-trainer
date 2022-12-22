@@ -1,0 +1,19 @@
+{
+  "displayRomaji": "Display Romaji",
+  "displayStrokeOrder": "Click on each kana to see the animation of the stroke order.",
+  "description": "There are three writing systems used in Japanese: hiragana, katakana, and kanji. In Japanese writing, all three systems are used together. Hiragana and katakana are used to write grammatical elements and provide pronunciation, while kanji are used to write the main content of the text. This allows for a compact and efficient way of writing, as kanji characters can convey a lot of meaning in a single character.",
+  "basicSounds": "Each kana character represents a syllable and consists of a consonant sound followed by a vowel sound. The 46 basic hiragana characters are divided into five rows, with each row representing a different vowel sound",
+  "additionalSounds": "In addition to the basic hiragana characters, there are also some modified characters called \"dakuten\" and \"handakuten\", which are used to represent certain consonant sounds. For example, the character \"ga\" (が) is written with a small circle to the right of the character \"ka\" (か), and the character \"pa\" (ぱ) is written with a small circle to the left of the character \"ha\" (は).",
+  "compound": "In Japanese, hiragana and katakana characters can be combined to form compound characters called \"yōon\", \"sokuon\", and \"chōonpu\". These compounds are used to represent certain sounds that cannot be represented by a single hiragana character.",
+  "hiragana": {
+    "description": "Hiragana is a syllabary, which means that each character represents a syllable. It is used to write native Japanese words and grammatical elements, and is the main writing system for children learning to read and write in Japan. Hiragana consists of 46 basic characters, and it is written in a curving, flowing style."
+  },
+  "katakana": {
+    "description": "Katakana is also a syllabary, and it is used to write words borrowed from other languages, as well as to represent onomatopoeia and scientific terms. It is written in a more angular style than hiragana, and it consists of 46 basic characters."
+  },
+  "romaji": {
+    "description1": "There is one additional writing system, Romaji. Uses the Latin alphabet to represent the sounds of the Japanese language. It is not a commonly used writing system in Japan, but it is often used to represent Japanese words and names in the Latin alphabet for non-Japanese speakers.",
+    "description2": "There are several different ways to write Japanese words in romaji, and there is no standard way of transcribing Japanese sounds into the Latin alphabet. For example, the word \"tokyo\" can be written as \"Tokyo,\" \"Tōkyō,\" \"Toukyou,\" or \"To-kyo\", depending on the system used.",
+    "description3": "Romaji is useful for people who are learning Japanese as a foreign language, as it allows them to read and write Japanese words using the familiar Latin alphabet. However, it is not a complete writing system, as it does not capture the full range of sounds and grammatical features of the Japanese language. It is also not used in official documents or in the Japanese media."
+  }
+}

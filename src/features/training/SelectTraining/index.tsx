@@ -1,9 +1,10 @@
 import type { ChangeEvent } from 'react'
-import { useContext, useReducer, useState } from 'react'
+import { useContext, useEffect, useReducer, useState } from 'react'
 
 import Button from '@/components/Button'
 import { KanaContext } from '@/context/KanaContext'
 import AlphabetSwapper from '@/features/shared/AlphabetSwapper'
+import training from '@/public/locales/en/training.json'
 import type { Kana, KanaType } from '@/types/shared'
 
 import { QuestionModes } from '../Questions'
@@ -53,9 +54,13 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
     )
   }
 
+  useEffect(() => {
+    dispatch({ type: ACTIONS.RESET })
+  }, [trainingPath])
+
   return (
     <>
-      <h1 className="mb-5 text-4xl">Traning Mode</h1>
+      <h1 className="mb-5 text-4xl">{training.title}</h1>
       <AlphabetSwapper
         currentAlphabet={trainingPath}
         setCurrentAlphabet={setTrainingPath}
@@ -63,7 +68,7 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
       <div className="my-8 mx-auto max-w-xl">
         <div className="grid grid-cols-3 gap-5">
           <Button
-            className="col-span-3"
+            className="col-span-3 text-xl"
             onClick={() => {
               dispatch({
                 type: ACTIONS.ALL_KANAS,
@@ -72,10 +77,10 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
             }}
             flavor={activeOptions.allKanas ? 'selected' : 'unselected'}
           >
-            All Kanas
+            {training.actions.allKanas}
           </Button>
           <Button
-            className="text-sm"
+            className="col-span-3 mx-auto w-1/2 text-sm sm:col-span-1 sm:w-full"
             onClick={() =>
               dispatch({
                 type: ACTIONS.ALL_BASIC,
@@ -84,10 +89,10 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
             }
             flavor={activeOptions.allBasic ? 'selected' : 'unselected'}
           >
-            All Basic
+            {training.actions.allBasic}
           </Button>
           <Button
-            className="text-sm"
+            className="col-span-3 mx-auto w-1/2 text-sm sm:col-span-1 sm:w-full"
             onClick={() =>
               dispatch({
                 type: ACTIONS.ALL_INTERMEDIATE,
@@ -96,10 +101,10 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
             }
             flavor={activeOptions.allIntermediate ? 'selected' : 'unselected'}
           >
-            All Voiced
+            {training.actions.allIntermediate}
           </Button>
           <Button
-            className="text-sm"
+            className="col-span-3 mx-auto w-1/2 text-sm sm:col-span-1 sm:w-full"
             onClick={() =>
               dispatch({
                 type: ACTIONS.ALL_ADVANCED,
@@ -108,7 +113,7 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
             }
             flavor={activeOptions.allAdvanced ? 'selected' : 'unselected'}
           >
-            All Y-vowel
+            {training.actions.allAdvanced}
           </Button>
           <ImgCheckbox
             checked={questionMode === QuestionModes.KANA_RECOGNITION}
@@ -116,7 +121,8 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
               e.target.checked &&
               setQuestionMode(QuestionModes.KANA_RECOGNITION)
             }
-            label="Kana Recognition"
+            label={training.actions.kanaRecognition}
+            imgURL="/assets/images/kana-recognition.webp"
           />
           <ImgCheckbox
             checked={questionMode === QuestionModes.REVERSE_RECOGNITION}
@@ -124,7 +130,8 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
               e.target.checked &&
               setQuestionMode(QuestionModes.REVERSE_RECOGNITION)
             }
-            label="Reverse Recognition"
+            label={training.actions.reverseRecognition}
+            imgURL="/assets/images/reverse-recognition.webp"
           />
           <ImgCheckbox
             checked={questionMode === QuestionModes.SOUND_RECOGNITION}
@@ -132,7 +139,8 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
               e.target.checked &&
               setQuestionMode(QuestionModes.SOUND_RECOGNITION)
             }
-            label="Sound Recognition"
+            label={training.actions.soundRecognition}
+            imgURL="/assets/images/sound-recognition.webp"
           />
         </div>
         <div className="mt-12 flex justify-center">
@@ -140,8 +148,12 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
             onClick={onSelectMode}
             disabled={!Object.values(activeOptions).some((value) => value)}
           >
-            Start
+            {training.actions.start}
           </Button>
+        </div>
+        <div className="mt-12 rounded-lg border border-primary p-5 leading-relaxed">
+          <p className="mb-5">{training.description1}</p>
+          <p>{training.description2}</p>
         </div>
       </div>
     </>

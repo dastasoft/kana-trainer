@@ -1,0 +1,12 @@
+{
+  "kanaAlphabets": {
+    "hiragana": "Hiragana",
+    "katakana": "Katakana",
+    "romaji": "Romaji"
+  },
+  "kanaTypes": {
+    "basic": "Basic",
+    "intermediate": "Dakuten / Handakuten",
+    "advanced": "Compound"
+  }
+}

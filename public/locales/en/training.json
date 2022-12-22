@@ -1,0 +1,21 @@
+{
+  "title": "Traning Mode",
+  "actions": {
+    "allKanas": "All Kanas",
+    "allBasic": "All Basic",
+    "allIntermediate": "All Voiced",
+    "allAdvanced": "All Y-vowel",
+    "kanaRecognition": "Kana Recognition",
+    "reverseRecognition": "Reverse Recognition",
+    "soundRecognition": "Sound Recognition",
+    "start": "Start"
+  },
+  "results": {
+    "title": "Results {{correctResponses}} of {{numberOfQuestions}}",
+    "subtitleAbove50": "You're doing great!",
+    "subtitleBelow50": "Try to revisit the Chart section for more practice",
+    "returnToSelectTraining": "Return to Select Training",
+    "yourAnswer": "Your answer:",
+    "correctResponse": "Correct answer:"
+  }
+}

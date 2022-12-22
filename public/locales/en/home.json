@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Learn Hiragana and Katakana in a fun way and in no time.",
+    "subtitle": "Start your journey of learning Japanese and learn two silabaries at once.",
+    "CTA": "Start Learning",
+    "CTA2": "Start Training"
+  },
+  "features": {
+    "charts": {
+      "title": "Charts",
+      "description": "Learn all the kanas throught the complete charts, all the information you need.",
+      "bullets": {
+        "0": "Both alphabets",
+        "1": "Stroke Order",
+        "2": "Sound example"
+      }
+    },
+    "quizzes": {
+      "title": "Quizz Training",
+      "description": "Practice with a flashcard like quizz to train every recognition you will need to use both alphabets every day.",
+      "bullets": {
+        "0": "Kana Recognition",
+        "1": "Reverse Recognition",
+        "2": "Sound Recognition"
+      }
+    }
+  }
+}

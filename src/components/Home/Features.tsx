@@ -1,3 +1,7 @@
+import Image from 'next/image'
+
+import home from '@/public/locales/en/home.json'
+
 const Bullet = ({ text }: { text: string }) => (
   <li className="flex space-x-3">
     <svg
@@ -18,55 +22,65 @@ const Bullet = ({ text }: { text: string }) => (
   </li>
 )
 
-const Features = () => (
-  <section>
-    <div className="mx-auto max-w-screen-xl space-y-12 px-4 py-8 lg:space-y-20 lg:py-24 lg:px-6">
-      <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
-        <div className="sm:text-lg">
-          <h2 className="mb-4 text-3xl font-extrabold tracking-tight">
-            Charts
-          </h2>
-          <p className="mb-8 font-light lg:text-xl">
-            Learn all the kanas throught the complete charts, all the
-            information you need.
-          </p>
+const Features = () => {
+  return (
+    <section>
+      <div className="mx-auto max-w-screen-xl space-y-12 px-4 py-8 lg:space-y-20 lg:py-24 lg:px-6">
+        <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
+          <div className="sm:text-lg">
+            <h2 className="mb-4 text-3xl font-extrabold tracking-tight">
+              {home.features.charts.title}
+            </h2>
+            <p className="mb-8 font-light lg:text-xl">
+              {home.features.charts.description}
+            </p>
 
-          <ul role="list" className="my-7 space-y-5 border-t border-white pt-8">
-            <Bullet text=" Both alphabets" />
-            <Bullet text="Stroke Order" />
-            <Bullet text="Sound example" />
-          </ul>
+            <ul
+              role="list"
+              className="my-7 space-y-5 border-t border-white pt-8"
+            >
+              <Bullet text={home.features.charts.bullets[0]} />
+              <Bullet text={home.features.charts.bullets[1]} />
+              <Bullet text={home.features.charts.bullets[2]} />
+            </ul>
+          </div>
+          <Image
+            className="mb-4 hidden w-full rounded-lg border border-primary lg:mb-0 lg:flex"
+            src="/assets/images/charts.webp"
+            height={720}
+            width={600}
+            alt="charts"
+          />
         </div>
-        <img
-          className="mb-4 hidden w-full rounded-lg lg:mb-0 lg:flex"
-          src="https://dummyimage.com/720x600"
-          alt="hero"
-        />
-      </div>
-      <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
-        <img
-          className="mb-4 hidden w-full rounded-lg lg:mb-0 lg:flex"
-          src="https://dummyimage.com/720x600"
-          alt="hero"
-        />
-        <div className="text-gray-400 sm:text-lg">
-          <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-white">
-            Quizz Training
-          </h2>
-          <p className="mb-8 font-light lg:text-xl">
-            Practice with a flashcard like quizz to train every recognition you
-            will need to use both alphabets every day.
-          </p>
+        <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
+          <Image
+            className="mb-4 hidden w-full rounded-lg border border-primary lg:mb-0 lg:flex"
+            src="/assets/images/quizzes.webp"
+            height={720}
+            width={600}
+            alt="quizzes"
+          />
+          <div className="text-gray-400 sm:text-lg">
+            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-white">
+              {home.features.quizzes.title}
+            </h2>
+            <p className="mb-8 font-light lg:text-xl">
+              {home.features.quizzes.description}
+            </p>
 
-          <ul role="list" className="my-7 space-y-5 border-t border-white pt-8">
-            <Bullet text="Kana Recognition" />
-            <Bullet text="Sound Recognition" />
-            <Bullet text="Reverse Recognition" />
-          </ul>
+            <ul
+              role="list"
+              className="my-7 space-y-5 border-t border-white pt-8"
+            >
+              <Bullet text={home.features.quizzes.bullets[0]} />
+              <Bullet text={home.features.quizzes.bullets[1]} />
+              <Bullet text={home.features.quizzes.bullets[2]} />
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
+}
 
 export default Features

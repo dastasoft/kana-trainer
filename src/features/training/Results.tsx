@@ -2,6 +2,7 @@ import { useEffect, useMemo } from 'react'
 
 import Button from '@/components/Button'
 import useConfetti from '@/hooks/useConfetti'
+import training from '@/public/locales/en/training.json'
 
 function calculePercentage(
   totalNumberOfQuestions: number,
@@ -37,14 +38,16 @@ export default function Results({ responses, startAgain }: ResultsProps) {
   return (
     <div className="mx-auto max-w-lg">
       <h2 className="text-center text-3xl">
-        Results {correctResponses} of {responses.length}
+        {training.results.title
+          .replace('{{correctResponses}}', String(correctResponses))
+          .replace('{{numberOfQuestions}}', String(responses.length))}
       </h2>
       <p className="mb-4 text-center">
-        {percentage > 50
-          ? `You're doing great!`
-          : `Try to revisit the Chart section for more practice`}
+        {training.results[`subtitle${percentage > 50 ? 'Above50' : 'Below50'}`]}
       </p>
-      <Button onClick={startAgain}>Return to Select Training</Button>
+      <Button onClick={startAgain}>
+        {training.results.returnToSelectTraining}
+      </Button>
       <div className="my-4">
         {responses.map(
           ({ question, response, correctResponse, wasCorrect }) => {
@@ -63,8 +66,14 @@ export default function Results({ responses, startAgain }: ResultsProps) {
                   {question}
                 </p>
                 <div className="ml-3">
-                  <p>Your answer: {response}</p>
-                  {!wasCorrect && <p>Correct answer: {correctResponse}</p>}
+                  <p>
+                    {training.results.yourAnswer} {response}
+                  </p>
+                  {!wasCorrect && (
+                    <p>
+                      {training.results.correctResponse} {correctResponse}
+                    </p>
+                  )}
                 </div>
               </div>
             )

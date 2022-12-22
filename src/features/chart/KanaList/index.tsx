@@ -1,3 +1,4 @@
+import common from '@/public/locales/en/common.json'
 import type { KanaData, KanaType } from '@/types/shared'
 
 import IndexLetter from './IndexLetter'
@@ -15,7 +16,7 @@ export default function KanaList({
   return (
     <div className="my-12 mx-auto max-w-5xl">
       <div>
-        <h2 className="mb-2 text-3xl">Basic</h2>
+        <h2 className="mb-2 text-3xl">{common.kanaTypes.basic}</h2>
         <div className="grid grid-cols-6 items-center gap-2 md:gap-4">
           {['', 'a', 'i', 'u', 'e', 'o'].map((letter) => (
             <IndexLetter key={letter} letter={letter} />
@@ -28,7 +29,7 @@ export default function KanaList({
         </div>
       </div>
       <div className="mt-20">
-        <h2 className="mb-2 text-3xl">Voiced</h2>
+        <h2 className="mb-2 text-3xl">{common.kanaTypes.intermediate}</h2>
         <div className="grid grid-cols-6 items-center gap-2">
           {['', 'a', 'i', 'u', 'e', 'o'].map((letter) => (
             <IndexLetter key={letter} letter={letter} />
@@ -42,7 +43,7 @@ export default function KanaList({
         </div>
       </div>
       <div className="mt-20">
-        <h2 className="mb-2 text-3xl">Y-vowel</h2>
+        <h2 className="mb-2 text-3xl">{common.kanaTypes.advanced}</h2>
         <div className="grid grid-cols-4 items-center gap-2">
           {['', 'a', 'u', 'o'].map((letter) => (
             <IndexLetter key={letter} letter={letter} />

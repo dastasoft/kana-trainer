@@ -1,0 +1,10 @@
+{
+  "displayRomaji": "Display Romaji",
+  "displayStrokeOrder": "Click on each Kana to display the stroke order animation.",
+  "hiragana": {
+    "description": "Hiragana is the basic Japanese phonetic script. It represents every sound in the Japanese language. Therefore, you can theoretically write everything in Hiragana. However, because Japanese is written with no spaces, this will create nearly indecipherable text."
+  },
+  "katakana": {
+    "description": "Katakana is mainly used for words imported from foreign languages. It can also be used to emphasize certain words similar to the function of italics."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "kanaAlphabets": {
+    "hiragana": "Hiragana",
+    "katakana": "Katakana"
+  },
+  "kanaTypes": {
+    "basic": "Basic",
+    "intermediate": "Voiced",
+    "advanced": "Y-vowel"
+  }
+}

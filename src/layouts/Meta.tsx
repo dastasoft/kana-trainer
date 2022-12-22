@@ -57,6 +57,14 @@ const Meta = (props: IMetaProps) => {
           url: props.canonical,
           locale: AppConfig.locale,
           site_name: AppConfig.site_name,
+          images: [
+            {
+              url: 'https://kana-trainer.dastasoft.com/assets/images/logo-big.webp',
+              width: 200,
+              height: 200,
+              alt: AppConfig.title,
+            },
+          ],
         }}
       />
     </>

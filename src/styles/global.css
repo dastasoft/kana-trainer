@@ -8,10 +8,6 @@ body,
   @apply bg-black text-white w-full;
 }
 
-#__next {
-  @apply max-w-xl mx-auto border border-primary;
-}
-
 body::-webkit-scrollbar {
   @apply w-3;
 }

@@ -65,7 +65,7 @@ export default function SelectTraining({ start }: SelectTrainingProps) {
         currentAlphabet={trainingPath}
         setCurrentAlphabet={setTrainingPath}
       />
-      <div className="my-8 mx-auto max-w-xl">
+      <div className="my-8 mx-auto max-w-3xl">
         <div className="grid grid-cols-3 gap-5">
           <Button
             className="col-span-3 text-xl"

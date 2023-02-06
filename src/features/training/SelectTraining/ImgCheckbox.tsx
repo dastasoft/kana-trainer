@@ -33,8 +33,8 @@ export default function ImgCheckbox({
           <Image
             src={imgURL}
             alt={label}
-            height={150}
-            width={150}
+            height={250}
+            width={250}
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"

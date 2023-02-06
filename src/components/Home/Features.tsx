@@ -25,7 +25,7 @@ const Bullet = ({ text }: { text: string }) => (
 const Features = () => {
   return (
     <section>
-      <div className="mx-auto max-w-screen-xl space-y-12 px-4 py-8 lg:space-y-20 lg:py-24 lg:px-6">
+      <div className="space-y-12 px-4 py-8 lg:space-y-20 lg:py-24 lg:px-6">
         <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
           <div className="sm:text-lg">
             <h2 className="mb-4 text-3xl font-extrabold tracking-tight">

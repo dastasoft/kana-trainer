@@ -12,7 +12,7 @@ const RootLayout = ({ meta, children }: RootLayoutProps) => (
   <div className="flex h-full min-h-screen flex-col antialiased">
     {meta}
     <Header />
-    <main className="flex-1 text-xl">{children}</main>
+    <main className="mx-auto w-full max-w-7xl flex-1 text-xl">{children}</main>
     <Footer />
   </div>
 )

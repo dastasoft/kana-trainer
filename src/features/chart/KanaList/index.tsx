@@ -19,8 +19,8 @@ export default function KanaList({
   const [displayRomaji, setDisplayRomaji] = useState(true)
 
   return (
-    <>
-      <div className="rounded-xl border border-primary p-5">
+    <div className="flex flex-col xl:grid xl:grid-cols-2 xl:gap-8">
+      <div className="rounded-xl border border-primary p-5 xl:col-span-2">
         <div className="flex items-center justify-between">
           <h2 className="mb-2 text-3xl">{common.kanaTypes.basic}</h2>
           <RomajiToggler
@@ -41,7 +41,7 @@ export default function KanaList({
           />
         </div>
       </div>
-      <div className="mt-10 rounded-xl border border-primary p-5">
+      <div className="mt-10 rounded-xl border border-primary p-5 xl:mt-0">
         <div className="flex items-center justify-between">
           <h2 className="mb-2 text-3xl">{common.kanaTypes.intermediate}</h2>
           <RomajiToggler
@@ -62,7 +62,7 @@ export default function KanaList({
           />
         </div>
       </div>
-      <div className="mt-10 rounded-xl border border-primary p-5">
+      <div className="mt-10 rounded-xl border border-primary p-5 xl:mt-0">
         <div className="flex items-center justify-between">
           <h2 className="mb-2 text-3xl">{common.kanaTypes.advanced}</h2>
           <RomajiToggler
@@ -83,6 +83,6 @@ export default function KanaList({
           />
         </div>
       </div>
-    </>
+    </div>
   )
 }

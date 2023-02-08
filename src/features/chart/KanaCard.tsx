@@ -36,7 +36,7 @@ const KanaCard = ({
       >
         <div
           onClick={toggleHandler}
-          className="min-h-8 relative h-full w-2/3 cursor-pointer md:mr-2"
+          className="min-h-8 relative h-full w-2/3 cursor-pointer md:mr-2 md:min-h-12 xl:min-h-16"
         >
           {strokeOrderVisible ? (
             <Image
@@ -52,7 +52,7 @@ const KanaCard = ({
           )}
         </div>
         <button
-          className="btn-primary btn-xs btn-circle btn py-1 md:btn-sm lg:btn-md"
+          className="btn-primary btn-xs btn-circle btn py-1 md:btn-sm"
           onClick={play}
           aria-label={`Play sound for ${romaji}`}
         >

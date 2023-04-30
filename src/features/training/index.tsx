@@ -3,6 +3,7 @@ import _without from 'lodash/without'
 import { useState } from 'react'
 
 import Button from '@/components/Button'
+import { TrainingProvider } from '@/context/TrainingContext'
 import type { HandleResponse, Kana, KanaType } from '@/types/shared'
 
 import Questions, { QuestionModes } from './Questions'
@@ -77,7 +78,7 @@ const Training = () => {
 
   if (UIState === UIStates.TRAINING) {
     return (
-      <div>
+      <TrainingProvider>
         <div className="mb-6 flex h-5 items-center justify-between">
           <Button className="w-min" onClick={startAgain} variant="flat">
             <svg
@@ -98,7 +99,7 @@ const Training = () => {
             trainingMode={training}
           />
         )}
-      </div>
+      </TrainingProvider>
     )
   }
 

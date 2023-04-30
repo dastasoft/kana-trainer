@@ -1,12 +1,10 @@
 /* eslint-disable no-nested-ternary */
 import _shuffle from 'lodash/shuffle'
-import { useEffect, useMemo, useState } from 'react'
+import { useContext, useEffect, useMemo, useState } from 'react'
 
 import Button from '@/components/Button'
+import { TrainingContext } from '@/context/TrainingContext'
 import type { HandleResponse } from '@/types/shared'
-
-const NEXT_QUESTION_TIME = 1500
-const REVEAL_RESPONSE_TIME = 1000
 
 type ResponseSelectorProps = {
   question: string
@@ -24,6 +22,7 @@ export default function ResponseSelector({
   const [revealResponses, setRevealResponses] = useState(false)
   const [iddleResponse, setIddleResponse] = useState(false)
   const [responseSelected, setResponseSelected] = useState<string | null>(null)
+  const { nextQuestionTime, revealResponsetime } = useContext(TrainingContext)
 
   const allOptions = useMemo(
     () => _shuffle([correctOption, ...options]),
@@ -40,9 +39,9 @@ export default function ResponseSelector({
           setTimeout(() => {
             setRevealResponses(false)
             handleResponse(question, responseSelected, correctOption)
-          }, NEXT_QUESTION_TIME)
+          }, nextQuestionTime)
         }
-      }, REVEAL_RESPONSE_TIME)
+      }, revealResponsetime)
     }
   }, [responseSelected])
 
